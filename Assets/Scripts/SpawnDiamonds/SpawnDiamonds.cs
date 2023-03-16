@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class SpawnDiamonds : MonoBehaviour
 {
    [SerializeField] private List<GameObject> diamondsList;
@@ -20,7 +22,7 @@ public class SpawnDiamonds : MonoBehaviour
 
    public static bool canPassNextPhase {get; set;}
 
-   [SerializeField] private Text textContador;
+   [SerializeField] private TextMeshProUGUI textContador;
    
    private void Start()
    {

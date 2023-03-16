@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseObject;
+    [Header("References")]
+    [SerializeField] GameObject pauseObject;
+
     private void Update() {
 
         if(Input.GetKeyDown(KeyCode.Escape) && GameOverController.gameContinue == true)
@@ -12,6 +14,5 @@ public class PauseController : MonoBehaviour
             Time.timeScale = 0;
             pauseObject.SetActive(true);
         }
-        
     }
 }
