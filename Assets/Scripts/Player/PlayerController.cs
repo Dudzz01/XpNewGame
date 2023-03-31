@@ -12,9 +12,9 @@ public class PlayerController : MonoBehaviour
 
     public float directionPlayerH{get; private set;} // direcao horizontal do player
     public float directionPlayerY{get; private set;} // direcao horizontal do player
-    [SerializeField] private float fHorizontalDampingBasic = -3f;
-    [SerializeField] private float fHorizontalDampingWhenStopping = 1f;
-    [SerializeField] private float fHorizontalDampingWhenTurning = 1f;
+    [SerializeField] private float fHorizontalDampingBasic = 0.5f;
+    [SerializeField] private float fHorizontalDampingWhenStopping = 0.5f;
+    [SerializeField] private float fHorizontalDampingWhenTurning = 0.5f;
     #endregion
     #region WallJump/Jump/Collisions/Actions Variables
     public bool IsGround {get; private set;} // verifica se o player está colidindo com o chao ou nao
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
     public void JumpMovimentEffects()
     {
-        float fallMultiplier = 5f; //variavel que faz o player cair mais rapido
+        float fallMultiplier = 5.5f; //variavel que faz o player cair mais rapido
         float lowJumpMultiplier = 4.5f; //variavel que faz o player subir mais "lento"
         const float valueTimerJumpCoyote = 0.15f; // efeito coyote
         
