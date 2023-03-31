@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
              }
             
 
-             Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
+             //Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
              rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH,-8.5f,8.5f),rig.velocity.y);
         }
     }
