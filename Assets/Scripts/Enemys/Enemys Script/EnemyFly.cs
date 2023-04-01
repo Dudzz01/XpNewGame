@@ -59,7 +59,7 @@ public class EnemyFly : EnemyBase
 
          if(hit.collider != null)
          {
-            if(hit.rigidbody.name == "Player")
+            if(hit.rigidbody.name == "Player" && EnergyBar.isShadowed == false)
             {
                 GameObject enemyP = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
                 enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;

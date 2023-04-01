@@ -10,15 +10,17 @@ public class EnergyBar : MonoBehaviour
 
     [Header("Properties")]
     [SerializeField] float rayDistance;
-    [SerializeField] bool isShadowed;
+    [SerializeField] public static bool isShadowed;
 
     [Header("Energy Bar")]
     [SerializeField] internal float remainingEnergy;
+    [SerializeField] public static float maxEnergy;
     [SerializeField] Image remainingEnergyImage;
 
     void Start()
     {
         InitEnergy();
+        maxEnergy = remainingEnergy;
     }
 
     void Update()
@@ -46,8 +48,11 @@ public class EnergyBar : MonoBehaviour
         }
         else
         {
-            remainingEnergy += 0.2f * Time.deltaTime;
-            yield return new WaitForSeconds(1f);
+            if(remainingEnergy != maxEnergy)
+            {
+                remainingEnergy += 0.2f * Time.deltaTime;
+                yield return new WaitForSeconds(1f);
+            }
         }
     }
 
@@ -55,9 +60,9 @@ public class EnergyBar : MonoBehaviour
     {
         remainingEnergyImage.fillAmount = remainingEnergy;
         
-        if(remainingEnergy > 1f)
+        if(remainingEnergy > maxEnergy)
         {
-            remainingEnergy = 1f;
+            remainingEnergy = maxEnergy;
         }
         else if(remainingEnergy < 0f)
         {

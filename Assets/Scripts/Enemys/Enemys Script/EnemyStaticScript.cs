@@ -21,7 +21,7 @@ public class EnemyStaticScript : EnemyBase
 
         Vector2 dirBullet = target.transform.position - transform.position;
 
-        if(posBeetweenEnemyToPlayer < 8)
+        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
         {
             GameObject bulletEm = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;

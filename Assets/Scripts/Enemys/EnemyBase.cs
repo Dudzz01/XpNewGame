@@ -28,4 +28,15 @@ public abstract class EnemyBase : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            if(EnergyBar.isShadowed == false)
+            {
+                //Mata o player
+            }
+        }
+    }
 }

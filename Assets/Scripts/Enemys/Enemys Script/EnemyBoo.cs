@@ -21,7 +21,7 @@ public class EnemyBoo : EnemyBase
 
         float posBeetweenEnemyToPlayer = Vector2.Distance(target.transform.position,transform.position);
 
-        if(posBeetweenEnemyToPlayer < 8)
+        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
         {
             transform.position = Vector2.MoveTowards(this.transform.position,target.transform.position,speedMoviment);
         }
