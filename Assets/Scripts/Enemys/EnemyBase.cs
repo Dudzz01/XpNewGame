@@ -5,16 +5,20 @@ using UnityEngine;
 public abstract class EnemyBase : MonoBehaviour
 {
     [SerializeField]protected float speedMoviment;
-
-    protected GameObject target;
+    protected Vector2 posInicial;
+    //protected GameObject target;
 
     [SerializeField]protected GameObject bulletEnemy;
     [SerializeField] protected float timeShoot;
+    protected Animator enemyAnimController;
 
+    protected GameObject target;
 
     protected void Start()
     {
          target = GameObject.FindGameObjectWithTag("Player");
+         enemyAnimController = GetComponent<Animator>();
+         posInicial = transform.position;
     }
     
    
@@ -37,6 +41,7 @@ public abstract class EnemyBase : MonoBehaviour
             {
                 //Mata o player
                 PlayerController.playerIsAlive = false;
+                Debug.Log("Matou o PLAYER");
             }
         }
     }

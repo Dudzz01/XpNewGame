@@ -22,22 +22,22 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(col.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
+          if(col.gameObject.tag == "Player")
+          {
+              Destroy(gameObject);
 
-            if(EnergyBar.isShadowed == false)
-            {
+              if(EnergyBar.isShadowed == false)
+              {
                  
-                //mata o player
-                PlayerController.playerIsAlive = false;
-            }
+                  //mata o player
+                  PlayerController.playerIsAlive = false;
+               }
 
-            if(EnergyBar.isShadowed == true)
-            {
-                // nao mata o player, mas diminui a capacidade maxima de energia
-                EnergyBar.maxEnergy -= 0.1f;
-            }
-        }
+              if(EnergyBar.isShadowed == true)
+              {
+                  // nao mata o player, mas diminui a capacidade maxima de energia
+                  EnergyBar.maxEnergy -= 0.1f;
+              }
+          }
     }
 }
