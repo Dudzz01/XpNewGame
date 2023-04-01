@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] EnergyBar energyBar;
+    [SerializeField] private EnergyBar energyBar;
 
     #region ComponentsVariablesOfPlayer
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] private SpriteRenderer spritePlayer;
+    private Animator playerAnimController;
     #endregion
     #region MovimentPlayerVariables
 
@@ -37,17 +38,22 @@ public class PlayerController : MonoBehaviour
     private Vector2 rightOffSetArm;
     private Vector2 leftOffSetArm;
     private bool jump;
+
+    public static bool playerIsAlive;
     #endregion
 
     void Start()
     {
+        playerIsAlive = true;
         energyBar = GetComponent<EnergyBar>();
+        playerAnimController = GetComponent<Animator>();
+        playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",1);
     }
 
     private void Awake()
     {
-        rightOffSetArm = new Vector2(0.13f,0);// Offset da posicao do colisor do braco direito do player
-        leftOffSetArm = new Vector2(-0.03f,0);// Offset da posicao do colisor do braco esquerdo do player
+        rightOffSetArm = new Vector2(0.2f,0);// Offset da posicao do colisor do braco direito do player
+        leftOffSetArm = new Vector2(-0.13f,0);// Offset da posicao do colisor do braco esquerdo do player
 
         CanMove = true;
     }
@@ -66,6 +72,12 @@ public class PlayerController : MonoBehaviour
         SlidingWall();
         WallJump();
         #endregion
+
+        //Animacao de morte do player
+        if(playerIsAlive == false)
+        {
+            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",4);
+        }
     }
 
     private void FixedUpdate()
@@ -75,10 +87,39 @@ public class PlayerController : MonoBehaviour
             Walk();
             JumpMovimentEffects();
         }
+        else
+        {
+            playerIsAlive = false;
+        }
     }
 
     public void Walk()
     {
+
+        #region AnimMovimentWalk
+        if(directionPlayerH == 0 && IsGround)
+        {
+           // playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
+            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",1);
+        }
+
+        if(directionPlayerH!=0  && IsGround)
+        {
+           // playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
+            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",2);
+            
+        }
+
+        if(directionPlayerH > 0)
+        {
+                spritePlayer.flipX = false;
+        }
+        else if(directionPlayerH < 0)
+        {
+                spritePlayer.flipX = true;
+        }
+        #endregion
+
         if(CanMove)
         {
             //movimento de walk do player otimizado, para funcionar de forma mais fluida
@@ -113,6 +154,14 @@ public class PlayerController : MonoBehaviour
 
     private bool JumpInput()
     {
+        #region AnimJump
+        if(!IsGround && !IsSliding)
+        {
+            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",3);
+        }
+        
+        #endregion
+
         if( Input.GetKeyDown(KeyCode.W) && IsGroundTimerJumpCoyote>0) // Se apertar W e colidir com o chao... 
         {
             jump = true;
@@ -167,6 +216,7 @@ public class PlayerController : MonoBehaviour
     {
         if((IsWallRight && directionPlayerH == 1 || IsWallLeft && directionPlayerH == -1) && !IsGround) // se estiver colidindo com a parede e pressionando o botao de movimento em direcao a parede e se não estiver colidindo com o chao, ele fara o sliding
         {
+            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",7);
             IsSliding = true;
             rig.velocity = new Vector2(rig.velocity.x, -2); // Deslizando
         }

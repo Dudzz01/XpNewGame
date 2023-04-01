@@ -30,6 +30,7 @@ public class EnemyBullet : MonoBehaviour
             {
                  
                 //mata o player
+                PlayerController.playerIsAlive = false;
             }
 
             if(EnergyBar.isShadowed == true)

@@ -36,6 +36,7 @@ public abstract class EnemyBase : MonoBehaviour
             if(EnergyBar.isShadowed == false)
             {
                 //Mata o player
+                PlayerController.playerIsAlive = false;
             }
         }
     }
