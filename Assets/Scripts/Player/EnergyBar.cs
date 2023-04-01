@@ -88,7 +88,7 @@ public class EnergyBar : MonoBehaviour
                     Debug.Log("TRANSLUCENT");
                     break;
                 case "Mobile":
-                    isShadowed = false;
+                    isShadowed = true;
                     Debug.Log("MOBILE");
                     break;
                 default:

@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 743865917408812981}
   - component: {fileID: 7461358416624762098}
   - component: {fileID: -2570988179594456717}
+  - component: {fileID: 6384849973949749234}
   - component: {fileID: -1879578517778992449}
   m_Layer: 10
   m_Name: Player
@@ -212,6 +213,24 @@ MonoBehaviour:
   transformFeet: {fileID: 1062413674527670548}
   transformArm: {fileID: 8623545716349450019}
   powerJump: 11
+--- !u!114 &6384849973949749234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137376241055943006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef14449e89859e1468c4865c43965260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayMask:
+    serializedVersion: 2
+    m_Bits: 256
+  rayDistance: 1000
+  remainingEnergy: 1
+  remainingEnergyImage: {fileID: 0}
 --- !u!95 &-1879578517778992449
 Animator:
   serializedVersion: 3
