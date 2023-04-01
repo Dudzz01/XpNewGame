@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] EnergyBar energyBar;
+
     #region ComponentsVariablesOfPlayer
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] private SpriteRenderer spritePlayer;
@@ -36,6 +39,11 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     #endregion
 
+    void Start()
+    {
+        energyBar = GetComponent<EnergyBar>();
+    }
+
     private void Awake()
     {
         rightOffSetArm = new Vector2(0.13f,0);// Offset da posicao do colisor do braco direito do player
@@ -62,63 +70,59 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Walk();
-        JumpMovimentEffects();
+        if(energyBar.remainingEnergy > 0f)
+        {
+            Walk();
+            JumpMovimentEffects();
+        }
     }
 
     public void Walk()
     {
         if(CanMove)
         {
-
-        
             //movimento de walk do player otimizado, para funcionar de forma mais fluida
-             float horizontalSpeedPlayerH = rig.velocity.x;
-             horizontalSpeedPlayerH += directionPlayerH;
+            float horizontalSpeedPlayerH = rig.velocity.x;
+            horizontalSpeedPlayerH += directionPlayerH;
 
-             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) < 0.01f)
-             {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) < 0.01f)
+            {
                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingWhenStopping, Time.deltaTime * 10f);
-             }
-             else if (Mathf.Sign(Input.GetAxisRaw("Horizontal")) != Mathf.Sign(horizontalSpeedPlayerH))
-             {
+            }
+            else if (Mathf.Sign(Input.GetAxisRaw("Horizontal")) != Mathf.Sign(horizontalSpeedPlayerH))
+            {
                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingWhenTurning, Time.deltaTime * 10f);
-             }
-             else
-             {
-                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingBasic, Time.deltaTime * 10f);
-             }
+            }
+            else
+            {
+                horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingBasic, Time.deltaTime * 10f);
+            }
             
-
-             //Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
-             rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH,-8.5f,8.5f),rig.velocity.y);
+            //Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
+            rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH,-8.5f,8.5f),rig.velocity.y);
         }
     }
 
     private void JumpAction()
-    {      //first jump
-           rig.velocity = new Vector2(rig.velocity.x,powerJump);
-           jump = false;
-           doubleJump = !doubleJump;
-           
-           
+    {      
+        //first jump
+        rig.velocity = new Vector2(rig.velocity.x,powerJump);
+        jump = false;
+        doubleJump = !doubleJump;
     }
 
     private bool JumpInput()
     {
-
         if( Input.GetKeyDown(KeyCode.W) && IsGroundTimerJumpCoyote>0) // Se apertar W e colidir com o chao... 
         {
             jump = true;
             IsGroundTimerJumpCoyote = 0;
             doubleJump = false;
         }
-
-        
         
         if(jump || doubleJump == true && Input.GetKeyDown(KeyCode.W)) //Se cumprir essa condicao, a acao do pulo é executada
         {
-                JumpAction();
+            JumpAction();
         }
 
         if(Input.GetKeyDown(KeyCode.W) && IsSliding) // Se estiver deslizando na parede e usa o W para pular, o Wall Jump funcionará
@@ -138,8 +142,6 @@ public class PlayerController : MonoBehaviour
         float lowJumpMultiplier = 4.5f; //variavel que faz o player subir mais "lento"
         const float valueTimerJumpCoyote = 0.15f; // efeito coyote
         
-        
-
         if(rig.velocity.y < 0)
         {
             rig.velocity+= Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; // se o player estiver caindo, será somado a velocidade dele um valor através dessa formula aritmetica para cair mais rapido
@@ -151,41 +153,33 @@ public class PlayerController : MonoBehaviour
 
         if(IsGround)
         {
-            
             //IsWallJumping = false;
             IsGroundTimerJumpCoyote = valueTimerJumpCoyote; // se o player estiver colidindo com o chao, a variavel recebe 0.2f
-            
         }
         else
         {
             IsGroundTimerJumpCoyote-=Time.deltaTime; // se o player nao estiver colidindo com o chao, a variavel ficará diminuindo até 0, logo o player consegue pular mesmo no ar com a condicao dessa variavel ser maior que 0 (Efeito Coyote)
            
         }
-
     }
 
     private void SlidingWall()
     {
         if((IsWallRight && directionPlayerH == 1 || IsWallLeft && directionPlayerH == -1) && !IsGround) // se estiver colidindo com a parede e pressionando o botao de movimento em direcao a parede e se não estiver colidindo com o chao, ele fara o sliding
         {
-
-             IsSliding = true;
-             rig.velocity = new Vector2(rig.velocity.x, -2); // Deslizando
+            IsSliding = true;
+            rig.velocity = new Vector2(rig.velocity.x, -2); // Deslizando
         }
         else
         {
             IsSliding = false;
         }
-       
     }
 
     private void WallJump() // Método que faz o player pular quando estiver deslizando na parede
     {   
-        
-        
         if(IsWallJump == true)
-        {
-            
+        {   
             if(IsWallRight)
             {
                rig.velocity = new Vector2(-9,12);
@@ -194,13 +188,9 @@ public class PlayerController : MonoBehaviour
             if(IsWallLeft)
             {
                 rig.velocity = new Vector2(9,12);
-                spritePlayer.flipX = false; 
-                
+                spritePlayer.flipX = false;    
             }
-
-            
         }
-        
     }
 
     private void StopWallJump()

@@ -6,14 +6,13 @@ public class EnemyStaticScript : EnemyBase
 {
     private void Update()
     {
-        timeShoot+=Time.deltaTime;
+        timeShoot += Time.deltaTime;
 
         if(timeShoot >2)
         {
-             Shoot();
-             timeShoot = 0;
+            Shoot();
+            timeShoot = 0;
         }
-       
     }
 
     public override void Shoot()
@@ -31,7 +30,6 @@ public class EnemyStaticScript : EnemyBase
         Debug.Log("Inimigo atirou! Distancia entre player e inimigo" + posBeetweenEnemyToPlayer);
     }
 
-    
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position,target.transform.position);

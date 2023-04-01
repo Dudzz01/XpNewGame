@@ -6,17 +6,16 @@ public class EnemyDinamic : EnemyBase
 {
     private float posBeetweenEnemyToPlayer;
     
-    
     private void Update()
     {
         posBeetweenEnemyToPlayer = Vector2.Distance(target.transform.position,transform.position);
 
-        timeShoot+=Time.deltaTime;
+        timeShoot += Time.deltaTime;
 
         if(timeShoot >2)
         {
-             Shoot();
-             timeShoot = 0;
+            Shoot();
+            timeShoot = 0;
         }
        
        Move();
@@ -24,8 +23,6 @@ public class EnemyDinamic : EnemyBase
 
     public override void Move()
     {
-        
-
         if(posBeetweenEnemyToPlayer < 8)
         {
             transform.position = Vector2.MoveTowards(this.transform.position,target.transform.position,5*Time.deltaTime);
@@ -46,10 +43,9 @@ public class EnemyDinamic : EnemyBase
 
         Debug.Log("Inimigo atirou! Distancia entre player e inimigo" + posBeetweenEnemyToPlayer);
     }
-
     
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position,target.transform.position);
+        Gizmos.DrawLine(transform.position, target.transform.position);
     }
 }
