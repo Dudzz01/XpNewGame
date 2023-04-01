@@ -74,6 +74,7 @@ public class EnergyBar : MonoBehaviour
         {
             isShadowed = true;
             Debug.Log("Collision Object: " + hit.rigidbody.name);
+            
         }
         else
         {

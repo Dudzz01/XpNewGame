@@ -12,7 +12,7 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] protected float timeShoot;
 
 
-    private void Start()
+    protected void Start()
     {
          target = GameObject.FindGameObjectWithTag("Player");
     }

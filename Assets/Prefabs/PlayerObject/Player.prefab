@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8623545716349450019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062413674527670548}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FeetPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 743865917408812981}
   - component: {fileID: 7461358416624762098}
   - component: {fileID: -2570988179594456717}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde54cc5ae371bb4ca4e3604e2eb8711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyBar: {fileID: 0}
   rig: {fileID: 743865917408812981}
   spritePlayer: {fileID: 4489700704259571410}
   fHorizontalDampingBasic: -3

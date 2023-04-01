@@ -27,7 +27,7 @@ public class EnemyStaticScript : EnemyBase
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;
         }
 
-        Debug.Log("Inimigo atirou! Distancia entre player e inimigo" + posBeetweenEnemyToPlayer);
+       // Debug.Log("Inimigo atirou! Distancia entre player e inimigo" + posBeetweenEnemyToPlayer);
     }
 
     private void OnDrawGizmos()
