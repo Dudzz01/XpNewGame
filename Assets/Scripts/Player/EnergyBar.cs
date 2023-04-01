@@ -77,9 +77,23 @@ public class EnergyBar : MonoBehaviour
 
         if(hit.collider != null)
         {
-            isShadowed = true;
-            Debug.Log("Collision Object: " + hit.rigidbody.name);
-            
+            switch(hit.collider.name)
+            {
+                case "Front":
+                    isShadowed = true;
+                    Debug.Log("FRONT");
+                    break;
+                case "Translucent":
+                    isShadowed = false;
+                    Debug.Log("TRANSLUCENT");
+                    break;
+                case "Mobile":
+                    isShadowed = false;
+                    Debug.Log("MOBILE");
+                    break;
+                default:
+                    return;
+            }
         }
         else
         {
