@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 1057982061}
   m_Layer: 8
   m_Name: Translucent
-  m_TagString: Untagged
+  m_TagString: Tilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2589,7 +2589,7 @@ GameObject:
   - component: {fileID: 1282406005}
   m_Layer: 8
   m_Name: Back
-  m_TagString: Tilemap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

@@ -41,12 +41,17 @@ public class PlayerController : MonoBehaviour
     private bool jump;
 
     public static bool playerIsAlive;
+
+    private float saveEnergyValor;
+
+    public float durAnimGameOver {get; set;}
     #endregion
 
     void Start()
     {
         FadePlayer();
         playerIsAlive = true;
+        saveEnergyValor = 1;
         energyBar = GetComponent<EnergyBar>();
         playerAnimController = GetComponent<Animator>();
         playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",1);
@@ -70,29 +75,54 @@ public class PlayerController : MonoBehaviour
         IsWallLeft = Physics2D.OverlapCircle((Vector2)transformArm.position+leftOffSetArm,0.19f,groundMask); // retornará true se o colisor do braco esquerdo do player estiver colidindo na parede
 
         #region ActionPlayerMethods
-        JumpInput();
-        SlidingWall();
-        WallJump();
+            if(playerIsAlive == true)
+            {
+                JumpInput();
+                SlidingWall();
+                WallJump();
+            }
         #endregion
 
         //Animacao de morte do player
         if(playerIsAlive == false)
         {
             playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",4);
+            
         }
+
+       durAnimGameOver =  playerAnimController.GetCurrentAnimatorStateInfo(0).length;
+        
     }
 
     private void FixedUpdate()
     {
-        if(energyBar.remainingEnergy > 0f)
+        
+
+        if(energyBar.remainingEnergy <= 0f)
         {
+            saveEnergyValor = 0;
+        }
+        
+        if(saveEnergyValor <= 0)
+        {
+            playerIsAlive = false;
+        }
+        else
+        {
+            playerIsAlive = true;
+        }
+
+        if(playerIsAlive == true)
+        {
+
             Walk();
             JumpMovimentEffects();
         }
         else
         {
-            playerIsAlive = false;
+            //Nothing
         }
+        
     }
 
     public void Walk()
