@@ -18,7 +18,7 @@ public class EnemyFly : EnemyBase
     }
     private void Update()
     {
-        hit = Physics2D.Raycast(transform.position,-Vector2.up,1000,layerMaskPlayer); // raycast hit que coleta as informacoes do objeto no qual está colidindo com o raio
+        
 
         Move();
 
