@@ -10,6 +10,8 @@ public class EnemyFly : EnemyBase
     private RaycastHit2D hit;
 
     private int canShot;
+
+    private bool canAnimWalk;
     private void Awake()
     {
           speedMoviment = 5;
@@ -18,7 +20,7 @@ public class EnemyFly : EnemyBase
     }
     private void Update()
     {
-        
+        hit = Physics2D.Raycast(transform.position,-Vector2.up,1000,layerMaskPlayer); // raycast hit que coleta as informacoes do objeto no qual está colidindo com o raio
 
         Move();
 
@@ -45,9 +47,15 @@ public class EnemyFly : EnemyBase
          }
          
          
-         if(hit.collider == null)
+         
+         if((hit.collider == null || hit.collider != null && hit.rigidbody.name != "Player"))
          {
-            canShot = 0;
+            // Debug.Log("Pronto para atirar");
+            if(canAnimWalk == true)
+            {
+                enemyAnimController.SetInteger("CondicaoDroneAnim",1);
+            }
+            
          }
          
 
@@ -61,9 +69,10 @@ public class EnemyFly : EnemyBase
          {
             if(hit.rigidbody.name == "Player" && EnergyBar.isShadowed == false)
             {
-                GameObject enemyP = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
-                enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
+                enemyAnimController.SetInteger("CondicaoDroneAnim",2);
+                canAnimWalk = false;
                 canShot = 1;
+                StartCoroutine(timeReloadShoot()); 
                 return;
             }
             
@@ -71,6 +80,20 @@ public class EnemyFly : EnemyBase
          
             
         
+    }
+
+    IEnumerator timeReloadShoot()
+    {
+        yield return new WaitForSeconds(0.65f);
+        GameObject enemyP = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
+        enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
+        canAnimWalk = true;
+        yield return new WaitForSeconds(0.1f);
+        if(canShot == 1)
+        {
+            canShot = 0;
+        }
+        yield return null;
     }
 
     private void OnDrawGizmos()
