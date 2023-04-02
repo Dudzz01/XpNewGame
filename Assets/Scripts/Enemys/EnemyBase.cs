@@ -12,7 +12,7 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] protected float timeShoot;
     protected Animator enemyAnimController;
 
-    protected GameObject target;
+    [SerializeField]protected GameObject target;
 
     protected void Start()
     {

@@ -4,21 +4,30 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CanvasOne : MonoBehaviour
 {   
     [Header("Preferences")]
 
-    [SerializeField] GameObject player1,player2,player3;
+    [SerializeField] GameObject player1,player2,player3,player4,player5,player6,enemy,diamond;
     [SerializeField] Image blackCanvas;
     [SerializeField] Button mouseClick;
 
+    [SerializeField] CanvasTwo canvasTwo;
+
+    private void Awake()
+    {
+        ButtonClick();
+    }
+    
     private void Start()
     {
         blackCanvas.DOFade(0f,1f).OnComplete(()=>
         {
             showPresentation();
         });
+
+        
     }
 
     void showPresentation()
@@ -33,12 +42,24 @@ public class CanvasOne : MonoBehaviour
             player3.GetComponent<Animator>().SetBool("isSliding",true);
 
         });
+
+        intro.OnComplete(()=> StartCoroutine(passProxScene()));
+    }   
+
+
+    public void ButtonClick()
+    {
+        mouseClick.onClick.AddListener(()=> Debug.Log("CLicando"));
+        
     }
 
-    void ButtonClick()
+    IEnumerator passProxScene()
     {
-        //mouseClick.onClick.AddListener();
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("CanvasTwo");
+        yield return null;
     }
+    
     
 
     

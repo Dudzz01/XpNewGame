@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         IsWallRight = Physics2D.OverlapCircle((Vector2)transformArm.position+rightOffSetArm,0.19f,groundMask); // retornará true se o colisor do braco direito do player estiver colidindo na parede
         IsWallLeft = Physics2D.OverlapCircle((Vector2)transformArm.position+leftOffSetArm,0.19f,groundMask); // retornará true se o colisor do braco esquerdo do player estiver colidindo na parede
 
-        #region ActionPlayerMethods
+        #region ActionPlayer
             if(playerIsAlive == true)
             {
                 JumpInput();
@@ -81,13 +81,18 @@ public class PlayerController : MonoBehaviour
                 WallJump();
             }
         #endregion
-
+            
+       
+        Debug.Log(playerIsAlive);
         //Animacao de morte do player
         if(playerIsAlive == false)
         {
             playerAnimController.SetTrigger("dead");
+
             
         }
+        
+        
 
        durAnimGameOver =  playerAnimController.GetCurrentAnimatorStateInfo(0).length;
         
@@ -106,10 +111,7 @@ public class PlayerController : MonoBehaviour
         {
             playerIsAlive = false;
         }
-        else
-        {
-            playerIsAlive = true;
-        }
+        
 
         if(playerIsAlive == true)
         {
@@ -119,7 +121,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //Nothing
+            playerIsAlive = false;
+            CanMove = false;
         }
         
     }
@@ -281,6 +284,27 @@ public class PlayerController : MonoBehaviour
     {
         IsWallJump = false;
         CanMove = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if(col.gameObject.tag == "Diamond")
+        {
+            SpawnDiamonds.DiamondsPlayerCollect++;
+            SpawnDiamonds.CanSpawnDiamond = true;
+            col.gameObject.SetActive(false);
+            
+        }
+
+        if(col.gameObject.tag == "Door")
+        {
+            if(SpawnDiamonds.canPassNextPhase == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                SpawnDiamonds.DiamondsPlayerCollect = 0;
+                SpawnDiamonds.CanSpawnDiamond = false;
+                SpawnDiamonds.canPassNextPhase = false;
+            }
+        }
     }
 
     private void OnDrawGizmos() 

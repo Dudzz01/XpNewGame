@@ -8,7 +8,7 @@ public class EnemyStaticScript : EnemyBase
     {
         timeShoot += Time.deltaTime;
 
-        if(timeShoot >2)
+        if(timeShoot >0.7)
         {
             Shoot();
             timeShoot = 0;
