@@ -32,6 +32,12 @@ public class EnemyBoo : EnemyBase
         if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
         {
             transform.position = Vector2.MoveTowards(this.transform.position,target.transform.position,speedMoviment);
+            enemyAnimController.SetInteger("CondicaoBooAnim",1);
+        }
+
+        if(posBeetweenEnemyToPlayer >= 8)
+        {
+            enemyAnimController.SetInteger("CondicaoBooAnim",2);
         }
     }
 
