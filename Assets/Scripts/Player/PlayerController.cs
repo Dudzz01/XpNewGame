@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
         saveEnergyValor = 1;
         energyBar = GetComponent<EnergyBar>();
         playerAnimController = GetComponent<Animator>();
-        playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",1);
     }
 
     private void Awake()
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
         //Animacao de morte do player
         if(playerIsAlive == false)
         {
-            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",4);
+            playerAnimController.SetTrigger("dead");
             
         }
 
@@ -132,13 +131,12 @@ public class PlayerController : MonoBehaviour
         if(directionPlayerH == 0 && IsGround)
         {
            // playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
-            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",1);
+            playerAnimController.SetBool("isWalking", false);
         }
 
         if(directionPlayerH!=0  && IsGround)
         {
-            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
-            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",2);
+            playerAnimController.SetBool("isWalking", true);
         }
 
         if(directionPlayerH > 0)
@@ -188,7 +186,11 @@ public class PlayerController : MonoBehaviour
         #region AnimJump
         if(!IsGround && !IsSliding)
         {
-            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",3);
+            playerAnimController.SetBool("isJumping",true);
+        }
+        else
+        {
+            playerAnimController.SetBool("isJumping",false);
         }
         
         #endregion
@@ -247,13 +249,14 @@ public class PlayerController : MonoBehaviour
     {
         if((IsWallRight && directionPlayerH == 1 || IsWallLeft && directionPlayerH == -1) && !IsGround) // se estiver colidindo com a parede e pressionando o botao de movimento em direcao a parede e se não estiver colidindo com o chao, ele fara o sliding
         {
-            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",7);
+            playerAnimController.SetBool("isSliding",true);
             IsSliding = true;
             rig.velocity = new Vector2(rig.velocity.x, -2); // Deslizando
         }
         else
         {
             IsSliding = false;
+            playerAnimController.SetBool("isSliding",false);
         }
     }
 

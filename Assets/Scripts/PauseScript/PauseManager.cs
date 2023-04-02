@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class GameOverManage : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
-    public void RestartGame()
+    public void ContinueGame()
     {
-        Debug.Log("Restart");
-        PlayerController.playerIsAlive = true;
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        this.gameObject.SetActive(false);
     }
 
     public void GoMenu()
     {
-        PlayerController.playerIsAlive = true;
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
