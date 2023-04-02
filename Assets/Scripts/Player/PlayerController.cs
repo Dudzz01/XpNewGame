@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        FadePlayer();
         playerIsAlive = true;
         energyBar = GetComponent<EnergyBar>();
         playerAnimController = GetComponent<Animator>();
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
         rightOffSetArm = new Vector2(0.2f,0);// Offset da posicao do colisor do braco direito do player
         leftOffSetArm = new Vector2(-0.13f,0);// Offset da posicao do colisor do braco esquerdo do player
 
-        CanMove = true;
+        //CanMove = true; modificado pela animação.
     }
 
     private void Update()
@@ -95,8 +97,8 @@ public class PlayerController : MonoBehaviour
 
     public void Walk()
     {
-
         #region AnimMovimentWalk
+        
         if(directionPlayerH == 0 && IsGround)
         {
            // playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
@@ -105,9 +107,8 @@ public class PlayerController : MonoBehaviour
 
         if(directionPlayerH!=0  && IsGround)
         {
-           // playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
+            playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
             playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",2);
-            
         }
 
         if(directionPlayerH > 0)
@@ -254,5 +255,14 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere((Vector2)transformArm.position+rightOffSetArm,0.19f);
         Gizmos.DrawWireSphere((Vector2)transformArm.position+leftOffSetArm,0.19f);
         Gizmos.DrawWireCube((Vector2)transformFeet.position,new Vector2(0.25f,0.20f));
+    }
+
+    void FadePlayer()
+    {
+        Sequence introSeq = DOTween.Sequence();
+        float dur = 1.0f;
+
+        introSeq.Append(spritePlayer.DOFade(1f, dur).OnComplete(()=> CanMove = true).SetDelay(.5f));
+        introSeq.Join(transform.DOMoveX(transform.position.x + 0.5f, dur));
     }
 }
