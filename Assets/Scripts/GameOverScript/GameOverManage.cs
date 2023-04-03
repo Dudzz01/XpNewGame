@@ -9,6 +9,7 @@ public class GameOverManage : MonoBehaviour
         Debug.Log("Restart");
         PlayerController.playerIsAlive = true;
         Time.timeScale = 1;
+        //SpawnDiamonds.DiamondsPlayerCollect = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -16,6 +17,7 @@ public class GameOverManage : MonoBehaviour
     {
         PlayerController.playerIsAlive = true;
         Time.timeScale = 1;
+        //SpawnDiamonds.DiamondsPlayerCollect = 0;
         SceneManager.LoadScene("Menu");
     }
 }

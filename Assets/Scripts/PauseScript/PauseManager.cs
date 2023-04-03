@@ -13,6 +13,7 @@ public class PauseManager : MonoBehaviour
     public void GoMenu()
     {
         Time.timeScale = 1;
+        //SpawnDiamonds.DiamondsPlayerCollect = 0;
         SceneManager.LoadScene("Menu");
     }
 }

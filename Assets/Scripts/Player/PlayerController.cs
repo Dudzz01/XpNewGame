@@ -297,7 +297,7 @@ public class PlayerController : MonoBehaviour
 
         if(col.gameObject.tag == "Door")
         {
-            if(SpawnDiamonds.canPassNextPhase == true)
+            if(SpawnDiamonds.canPassNextPhase == true && playerIsAlive == true)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
                 SpawnDiamonds.DiamondsPlayerCollect = 0;
