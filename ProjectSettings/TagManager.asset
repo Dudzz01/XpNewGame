@@ -49,3 +49,6 @@ TagManager:
   - name: TileCenario
     uniqueID: 791271249
     locked: 0
+  - name: UiSortSprite
+    uniqueID: 1056693781
+    locked: 0

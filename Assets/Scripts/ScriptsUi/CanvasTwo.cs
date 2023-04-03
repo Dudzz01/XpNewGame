@@ -54,7 +54,8 @@ public class CanvasTwo : MonoBehaviour
     IEnumerator passProxScene()
     {
         yield return new WaitForSeconds(6f);
-        SceneManager.LoadScene("Introduction");
+        
+        SceneManager.LoadScene("Menu");
         yield return null;
     }
 }
