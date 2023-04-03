@@ -16,7 +16,7 @@ public class EnemyDinamic : EnemyBase
     private Vector2 dirBullet;
     private void Awake()
     {
-        speedMoviment = 4*Time.deltaTime;
+        speedMoviment = 3*Time.deltaTime;
         
     }
 
@@ -46,7 +46,7 @@ public class EnemyDinamic : EnemyBase
     {
         posYEnemy = posInicial.y;
 
-        if(posBeetweenEnemyToPlayer < 8 && hit.collider != null)
+        if(posBeetweenEnemyToPlayer < 8  && hit.collider != null)
         {
             if(hit.rigidbody.name == "Player")
             {

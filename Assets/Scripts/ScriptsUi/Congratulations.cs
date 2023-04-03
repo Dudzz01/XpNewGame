@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class Congratulations : MonoBehaviour
 {
     [Header("References")]
@@ -39,5 +39,15 @@ public class Congratulations : MonoBehaviour
 
         seq.AppendCallback(()=> player.GetComponent<Animator>().SetBool("isWalking", false));
         seq.Append(textCong.DOFade(1f, 1f));
+
+        seq.OnComplete(()=> StartCoroutine(passProxScene()));
+    }
+
+    IEnumerator passProxScene()
+    {
+        yield return new WaitForSeconds(15f);
+        
+        SceneManager.LoadScene("Credits");
+        yield return null;
     }
 }

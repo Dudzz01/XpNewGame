@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameplayScenes/Final.unity
     guid: 342f3b0c67a684644a3b706b613f21a3
   - enabled: 1
+    path: Assets/Scenes/MenuScenes/Congratulations.unity
+    guid: 0635091fd55f4df4db831e8199e1aed0
+  - enabled: 1
     path: Assets/Scenes/GameplayScenes/CanvasOne.unity
     guid: 7e769db88a912154aa7bd8201622f0f5
   - enabled: 1
@@ -26,7 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuScenes/Credits.unity
     guid: bdef55b0be6ab274193726501bc6fe76
-  - enabled: 1
-    path: Assets/Scenes/MenuScenes/Congratulations.unity
-    guid: 0635091fd55f4df4db831e8199e1aed0
   m_configObjects: {}

@@ -6,10 +6,17 @@ public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rig;
      public Vector2 dirBullet{get; set;}
-
+     [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip[] soundClipBullet = new AudioClip[1];
      private const float speedBullet = 8;
 
-    // Update is called once per frame
+    
+    void Start()
+    {
+        soundSource.clip = soundClipBullet[0];
+        soundSource.volume = 0.05f;
+        soundSource.Play();
+    }
     void Update()
     {
         rig.velocity = dirBullet*speedBullet;
