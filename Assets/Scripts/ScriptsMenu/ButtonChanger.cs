@@ -7,18 +7,29 @@ using UnityEngine.SceneManagement;
 public class ButtonChanger : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Button button;
-
-    [Header("Properties")]
-    [SerializeField] string sceneName;
+    [SerializeField] Button myButton;
 
     void Start()
     {
-        button.onClick.AddListener(ChangeToScene);    
+        StartCoroutine(Waiter());
+    }
+
+    IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Menu");
+    }
+
+/*    void Awake()
+    {
+        myButton.onClick.AddListener(ChangeToScene);    
+        print("iniciou");
     }
 
     public void ChangeToScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Menu");
+        Debug.Log("Clicou?");
     }
+*/
 }

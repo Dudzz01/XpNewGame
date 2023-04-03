@@ -454,13 +454,13 @@ MonoBehaviour:
     Artist / Level Designer
 
 
-    Isaac "Ningow"
+    Isaac "Ningow" Vasconcelos
 
-    Artist / Sound Designer
+    Artist
+    / Sound Designer
 
 
-    Lucas
-    Barbosa
+    Lucas Barbosa
 
     Programmer / Level Designer'
   m_isRightToLeft: 0
@@ -573,10 +573,10 @@ RectTransform:
   m_Father: {fileID: 787228021}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1760, y: -1050}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099802463
 MonoBehaviour:
@@ -620,18 +620,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2099802465}
-        m_MethodName: ChangeToScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &2099802464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -652,5 +641,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c968d470ef03c42a82c6e21be4c2b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 2099802463}
-  sceneName: Menu
+  myButton: {fileID: 2099802463}
