@@ -33,7 +33,7 @@ public abstract class EnemyBase : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    protected virtual void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Player")
         {
@@ -44,5 +44,7 @@ public abstract class EnemyBase : MonoBehaviour
                 Debug.Log("Matou o PLAYER");
             }
         }
+
+        
     }
 }

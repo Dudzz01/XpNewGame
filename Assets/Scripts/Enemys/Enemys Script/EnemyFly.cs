@@ -37,14 +37,8 @@ public class EnemyFly : EnemyBase
     public override void Move()
     {
          // Movimentacao Horizontal
-         if(transform.position.x < -4.5)
-         {
+         
              rig.velocity = new Vector2(speedMoviment,0);
-         }
-         if(transform.position.x > 4.5)
-         {
-            rig.velocity = new Vector2(-speedMoviment,0);
-         }
          
          
          
@@ -61,6 +55,10 @@ public class EnemyFly : EnemyBase
 
     }
 
+    
+
+    
+
     public override void Shoot()
     {
         // Verificacao de mira travada no player ao se movimentar
@@ -75,16 +73,16 @@ public class EnemyFly : EnemyBase
                 StartCoroutine(timeReloadShoot()); 
                 return;
             }
-            
+            Debug.Log("Name colision vilon: " + hit.rigidbody.name);
          }
          
-            
+        
         
     }
 
     IEnumerator timeReloadShoot()
     {
-        yield return new WaitForSeconds(0.65f);
+        yield return new WaitForSeconds(0.5f);
         GameObject enemyP = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
         enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
         canAnimWalk = true;
@@ -94,6 +92,24 @@ public class EnemyFly : EnemyBase
             canShot = 0;
         }
         yield return null;
+    }
+
+    protected override void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            if(EnergyBar.isShadowed == false)
+            {
+                //Mata o player
+                PlayerController.playerIsAlive = false;
+                Debug.Log("Matou o PLAYER");
+            }
+        }
+
+        if(col.gameObject.tag == "Tilemap")
+        {
+            speedMoviment*=-1;
+        }
     }
 
     private void OnDrawGizmos()

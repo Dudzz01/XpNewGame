@@ -51,6 +51,7 @@ MonoBehaviour:
   bulletEnemy: {fileID: 8508638124374106644, guid: 9d57d74c542c91b4fb0f1e03c4b38e54,
     type: 3}
   timeShoot: 0
+  target: {fileID: 0}
   rig: {fileID: -1781880628583562019}
   layerMaskPlayer:
     serializedVersion: 2
@@ -128,8 +129,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 791271249
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: 1234043491069991896, guid: b51f687c2e37b1740953156b2a70661a,
     type: 3}
