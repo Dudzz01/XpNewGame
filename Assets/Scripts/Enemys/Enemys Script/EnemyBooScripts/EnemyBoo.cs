@@ -29,13 +29,13 @@ public class EnemyBoo : EnemyBase
 
     public override void Move()
     {
-        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
+        if(posBeetweenEnemyToPlayer < 7f )
         {
             transform.position = Vector2.MoveTowards(this.transform.position,target.transform.position,speedMoviment);
             enemyAnimController.SetInteger("CondicaoBooAnim",1);
         }
 
-        if(posBeetweenEnemyToPlayer >= 8)
+        if(posBeetweenEnemyToPlayer >= 7f)
         {
             enemyAnimController.SetInteger("CondicaoBooAnim",2);
         }
@@ -47,7 +47,7 @@ public class EnemyBoo : EnemyBase
         
         Vector2 dirBullet = target.transform.position - transform.position;
 
-        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
+        if(posBeetweenEnemyToPlayer < 8 )
         {
             GameObject bulletEm = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;

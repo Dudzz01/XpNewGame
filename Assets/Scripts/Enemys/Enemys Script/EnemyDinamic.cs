@@ -46,7 +46,7 @@ public class EnemyDinamic : EnemyBase
     {
         posYEnemy = posInicial.y;
 
-        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false && hit.collider != null)
+        if(posBeetweenEnemyToPlayer < 8 && hit.collider != null)
         {
             if(hit.rigidbody.name == "Player")
             {

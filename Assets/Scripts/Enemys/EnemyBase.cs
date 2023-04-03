@@ -47,4 +47,22 @@ public abstract class EnemyBase : MonoBehaviour
 
         
     }
+
+    protected void OnTriggerEnter2D(Collider2D col) 
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            if(EnergyBar.isShadowed == false)
+            {
+                //Mata o player
+                PlayerController.playerIsAlive = false;
+                Debug.Log("Matou o PLAYER");
+            }
+        }
+    }
+    
+        
+
+        
+    
 }

@@ -1886,7 +1886,7 @@ PrefabInstance:
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8798173
+      value: 0.24313726
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
@@ -1901,7 +1901,7 @@ PrefabInstance:
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
       propertyPath: m_ShapePath.Array.size
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
@@ -1911,7 +1911,7 @@ PrefabInstance:
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
       propertyPath: m_ShapePath.Array.data[0].x
-      value: -0.27556658
+      value: -1.8132443
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
@@ -2007,6 +2007,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ShapePath.Array.data[9].y
       value: -0.42428207
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
+      propertyPath: m_ShapePath.Array.data[10].x
+      value: -0.10076666
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
+      propertyPath: m_ShapePath.Array.data[10].y
+      value: -7.4985948
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
+      propertyPath: m_ShapePath.Array.data[11].x
+      value: -2.8133025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
+      propertyPath: m_ShapePath.Array.data[11].y
+      value: -7.5331497
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560031, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
@@ -12376,7 +12396,7 @@ PrefabInstance:
     - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.2
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
         type: 3}
