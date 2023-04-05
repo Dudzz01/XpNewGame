@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     public bool CanMove{get; private set;}
     private bool doubleJump;
     [SerializeField]private LayerMask groundMask;
-    [SerializeField]private LayerMask objectsGroundMask; 
+    [SerializeField]private LayerMask wallJumpMask; 
     [SerializeField]private Transform transformFeet;
     [SerializeField]private Transform transformArm;
     [SerializeField]private float powerJump;
@@ -85,9 +85,9 @@ public class PlayerController : MonoBehaviour
         directionPlayerH = Input.GetAxisRaw("Horizontal"); // variavel para saber a direcao h do player
         directionPlayerY = Input.GetAxisRaw("Vertical"); // variavel para saber a direcao y do player
 
-        IsGround = Physics2D.OverlapBox((Vector2)transformFeet.position ,new Vector2(0.25f,0.20f),0,groundMask) || Physics2D.OverlapBox(transformFeet.position,new Vector2(0.25f,0.24f),0,objectsGroundMask); // verifica se o pé do player está colidindo com o chao
-        IsWallRight = Physics2D.OverlapCircle((Vector2)transformArm.position+rightOffSetArm,0.19f,groundMask); // retornará true se o colisor do braco direito do player estiver colidindo na parede
-        IsWallLeft = Physics2D.OverlapCircle((Vector2)transformArm.position+leftOffSetArm,0.19f,groundMask); // retornará true se o colisor do braco esquerdo do player estiver colidindo na parede
+        IsGround = Physics2D.OverlapBox((Vector2)transformFeet.position ,new Vector2(0.25f,0.20f),0,groundMask) || Physics2D.OverlapBox(transformFeet.position,new Vector2(0.25f,0.24f),0,wallJumpMask); // verifica se o pé do player está colidindo com o chao
+        IsWallRight = Physics2D.OverlapCircle((Vector2)transformArm.position+rightOffSetArm,0.19f,wallJumpMask); // retornará true se o colisor do braco direito do player estiver colidindo na parede
+        IsWallLeft = Physics2D.OverlapCircle((Vector2)transformArm.position+leftOffSetArm,0.19f,wallJumpMask); // retornará true se o colisor do braco esquerdo do player estiver colidindo na parede
 
         #region ActionPlayer
             if(playerIsAlive == true)

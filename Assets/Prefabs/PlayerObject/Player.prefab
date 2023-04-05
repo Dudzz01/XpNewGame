@@ -213,9 +213,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  objectsGroundMask:
+  wallJumpMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2048
   transformFeet: {fileID: 1062413674527670548}
   transformArm: {fileID: 8623545716349450019}
   powerJump: 11
@@ -231,9 +231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef14449e89859e1468c4865c43965260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayMask:
+  rayMaskGround:
     serializedVersion: 2
     m_Bits: 256
+  rayMaskWallJump:
+    serializedVersion: 2
+    m_Bits: 2048
   rayDistance: 1000
   remainingEnergy: 1
   remainingEnergyImage: {fileID: 0}

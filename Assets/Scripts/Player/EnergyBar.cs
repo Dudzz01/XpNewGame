@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnergyBar : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] LayerMask rayMask;
+    [SerializeField] LayerMask rayMaskGround;
 
     [Header("Properties")]
     [SerializeField] float rayDistance;
@@ -73,7 +73,7 @@ public class EnergyBar : MonoBehaviour
 
     void SetHeadRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, rayDistance, rayMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, rayDistance, rayMaskGround);
 
         if(hit.collider != null)
         {
@@ -83,6 +83,12 @@ public class EnergyBar : MonoBehaviour
                     isShadowed = true;
                     Debug.Log("FRONT");
                     break;
+
+                case "WallJumpMapSupport":
+                    isShadowed = true;
+                    Debug.Log("WallJumpMap");
+                    break;    
+                
                 case "Translucent":
                     isShadowed = false;
                     Debug.Log("TRANSLUCENT");
@@ -97,9 +103,13 @@ public class EnergyBar : MonoBehaviour
         }
         else
         {
-            isShadowed = false;
-            Debug.Log("THERE'S NO COLLIDER");
+                isShadowed = false;
+                Debug.Log("THERE'S NO COLLIDER");
+            
         }
+        
+
+        
     }
 
     void OnDrawGizmos()
