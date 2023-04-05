@@ -6,9 +6,10 @@ public class GameControl : MonoBehaviour
 {
     private static GameObject gmController;
 
+    
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
 
         DontDestroyOnLoad(this.transform.root.gameObject);
 
@@ -22,5 +23,6 @@ public class GameControl : MonoBehaviour
         }
     }
 
+    
     
 }

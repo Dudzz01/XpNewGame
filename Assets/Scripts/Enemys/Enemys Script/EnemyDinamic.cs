@@ -16,7 +16,7 @@ public class EnemyDinamic : EnemyBase
     private Vector2 dirBullet;
     private void Awake()
     {
-        speedMoviment = 3*Time.deltaTime;
+        speedMoviment = 10;
         
     }
 
@@ -36,27 +36,39 @@ public class EnemyDinamic : EnemyBase
            
        
        
-       Move();
+       SetAnimationConfig();
        
        
        
     }
 
+    private void FixedUpdate()
+    {
+        Move();
+        
+    }
+
+
     public override void Move()
     {
+        
         posYEnemy = posInicial.y;
 
         if(posBeetweenEnemyToPlayer < 8  && hit.collider != null)
         {
             if(hit.rigidbody.name == "Player")
             {
-                transform.position = Vector2.MoveTowards(new Vector2(transform.position.x,posYEnemy),new Vector2(target.transform.position.x,posYEnemy),speedMoviment);
+                transform.position = Vector2.MoveTowards(new Vector2(transform.position.x,posYEnemy),new Vector2(target.transform.position.x,posYEnemy),speedMoviment*0.01f);
             }
             
             
         }
-        
-        if(dirBullet.x >= Vector2.right.x)
+    }
+
+
+    public override void SetAnimationConfig()
+    {
+         if(dirBullet.x >= Vector2.right.x)
         {
             enemyDinamicSprite.flipX = false;
         }
@@ -70,8 +82,6 @@ public class EnemyDinamic : EnemyBase
             // Debug.Log("Pronto para atirar");
             enemyAnimController.SetInteger("CondicaoEnemyMove",1);
          }
-         
-
     }
 
     public override void Shoot()

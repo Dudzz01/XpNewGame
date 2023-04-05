@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 442998118653892234}
   m_Layer: 8
   m_Name: Translucent
-  m_TagString: Tilemap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

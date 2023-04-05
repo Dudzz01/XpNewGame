@@ -15,6 +15,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip[] soundClipPlayer = new AudioClip[3];
     private Animator playerAnimController;
+    private static PlayerController _Instance;
+
+        public static PlayerController Instance
+        {
+            get
+            {
+                _Instance = FindObjectOfType<PlayerController>();
+
+                return _Instance;
+            }
+        }
+        
     #endregion
     #region MovimentPlayerVariables
 

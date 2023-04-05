@@ -9,7 +9,7 @@ public class EnemyBoo : EnemyBase
     
     private void Awake()
     {
-        speedMoviment = 4*Time.deltaTime;
+        speedMoviment = 10;
     }
 
     private void Update()
@@ -24,14 +24,19 @@ public class EnemyBoo : EnemyBase
             timeShoot = 0;
         }
        
-       Move();
+       SetAnimationConfig();
     }
 
-    public override void Move()
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+
+    public override void SetAnimationConfig()
     {
         if(posBeetweenEnemyToPlayer < 7f )
         {
-            transform.position = Vector2.MoveTowards(this.transform.position,target.transform.position,speedMoviment);
             enemyAnimController.SetInteger("CondicaoBooAnim",1);
         }
 
@@ -39,6 +44,16 @@ public class EnemyBoo : EnemyBase
         {
             enemyAnimController.SetInteger("CondicaoBooAnim",2);
         }
+    }
+
+    public override void Move()
+    {
+        if(posBeetweenEnemyToPlayer < 7f )
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position,target.transform.position,speedMoviment*0.01f);
+        }
+
+        
     }
 
     public override void Shoot()

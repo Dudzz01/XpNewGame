@@ -14,8 +14,7 @@ public class EnemyFly : EnemyBase
     private bool canAnimWalk;
     private void Awake()
     {
-          speedMoviment = 5;
-          rig.velocity = Vector2.right*speedMoviment;
+          speedMoviment = 3;
           canShot = 0;
     }
     private void Update()
@@ -30,29 +29,35 @@ public class EnemyFly : EnemyBase
             
         }
 
+        Debug.Log(speedMoviment);
+
+        SetAnimationConfig();
        
     }
 
+     void FixedUpdate()
+    {
+        Move();
+    }
 
+    public override void SetAnimationConfig()
+    {
+            if((hit.collider == null || hit.collider != null && hit.rigidbody.name != "Player"))
+            {
+                // Debug.Log("Pronto para atirar");
+                if(canAnimWalk == true)
+                {
+                    enemyAnimController.SetInteger("CondicaoDroneAnim",1);
+                }
+            
+         }
+    }
     public override void Move()
     {
          // Movimentacao Horizontal
          
              rig.velocity = new Vector2(speedMoviment,0);
-         
-         
-         
-         if((hit.collider == null || hit.collider != null && hit.rigidbody.name != "Player"))
-         {
-            // Debug.Log("Pronto para atirar");
-            if(canAnimWalk == true)
-            {
-                enemyAnimController.SetInteger("CondicaoDroneAnim",1);
-            }
-            
-         }
-         
-
+     
     }
 
     
@@ -82,11 +87,11 @@ public class EnemyFly : EnemyBase
 
     IEnumerator timeReloadShoot()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         GameObject enemyP = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
         enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
         canAnimWalk = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         if(canShot == 1)
         {
             canShot = 0;
@@ -109,8 +114,11 @@ public class EnemyFly : EnemyBase
         if(col.gameObject.tag == "Tilemap")
         {
             speedMoviment*=-1;
+            Debug.Log("Tilemap colission");
         }
     }
+
+    
 
     private void OnDrawGizmos()
     {

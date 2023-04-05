@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eeb413781923d842a8f514a57e1a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMoviment: 0
   bulletEnemy: {fileID: 8508638124374106644, guid: 9d57d74c542c91b4fb0f1e03c4b38e54,
     type: 3}
   timeShoot: 0
@@ -90,8 +89,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: -0.07522392}
+  m_Size: {x: 0.5, y: 0.84955215}
   m_Direction: 0
 --- !u!212 &-4657058436150402858
 SpriteRenderer:
