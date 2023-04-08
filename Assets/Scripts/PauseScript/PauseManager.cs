@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class PauseManager : MonoBehaviour
 {
     public void ContinueGame()
     {
         Time.timeScale = 1;
-        transform.parent.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
     public void GoMenu()
