@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip[] soundClipPlayer = new AudioClip[3];
     private Animator playerAnimController;
+
     private static PlayerController _Instance;
 
         public static PlayerController Instance
@@ -69,15 +70,12 @@ public class PlayerController : MonoBehaviour
         saveEnergyValor = 1;
         energyBar = GetComponent<EnergyBar>();
         playerAnimController = GetComponent<Animator>();
-        
     }
 
     private void Awake()
     {
-        rightOffSetArm = new Vector2(0.2f,0);// Offset da posicao do colisor do braco direito do player
-        leftOffSetArm = new Vector2(-0.13f,0);// Offset da posicao do colisor do braco esquerdo do player
-
-        //CanMove = true; modificado pela animação.
+        rightOffSetArm = new Vector2(0.2f, 0); // Offset da posicao do colisor do braco direito do player
+        leftOffSetArm = new Vector2(-0.13f, 0); // Offset da posicao do colisor do braco esquerdo do player
     }
 
     private void Update()
@@ -105,19 +103,14 @@ public class PlayerController : MonoBehaviour
         if(playerIsAlive == false)
         {
             playerAnimController.SetTrigger("dead");
-             
         }
         
-        
-
        durAnimGameOver =  playerAnimController.GetCurrentAnimatorStateInfo(0).length;
-        
+       playerAnimController.SetBool("isGrounded", IsGround);
     }
 
     private void FixedUpdate()
     {
-        
-
         if(energyBar.remainingEnergy <= 0f)
         {
             saveEnergyValor = 0;
@@ -127,11 +120,9 @@ public class PlayerController : MonoBehaviour
         {
             playerIsAlive = false;
         }
-        
 
         if(playerIsAlive == true)
         {
-
             Walk();
             JumpMovimentEffects();
         }
@@ -140,7 +131,6 @@ public class PlayerController : MonoBehaviour
             playerIsAlive = false;
             CanMove = false;
         }
-        
     }
 
     public void Walk()
@@ -158,7 +148,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(directionPlayerH!=0  && IsGround)
+        if(directionPlayerH !=0  && IsGround)
         {
             playerAnimController.SetBool("isWalking", true);
             
@@ -167,11 +157,11 @@ public class PlayerController : MonoBehaviour
 
         if(directionPlayerH > 0)
         {
-                spritePlayer.flipX = false;
+            spritePlayer.flipX = false;
         }
         else if(directionPlayerH < 0)
         {
-                spritePlayer.flipX = true;
+            spritePlayer.flipX = true;
         }
         #endregion
 
@@ -194,7 +184,6 @@ public class PlayerController : MonoBehaviour
                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingBasic, Time.deltaTime * 10f);
             }
             
-            //Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
             rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH,-8.5f,8.5f),rig.velocity.y);
         }
     }
@@ -212,7 +201,7 @@ public class PlayerController : MonoBehaviour
         #region AnimJump
         if(!IsGround && !IsSliding)
         {
-            playerAnimController.SetBool("isJumping",true);
+            playerAnimController.SetBool("isJumping", true);
             soundSource.clip = soundClipPlayer[1];
             soundSource.loop = false;
             soundSource.volume = 0.05f;
@@ -220,7 +209,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            playerAnimController.SetBool("isJumping",false);
+            playerAnimController.SetBool("isJumping", false);
         }
         
         #endregion
@@ -279,14 +268,14 @@ public class PlayerController : MonoBehaviour
     {
         if((IsWallRight && directionPlayerH == 1 || IsWallLeft && directionPlayerH == -1) && !IsGround) // se estiver colidindo com a parede e pressionando o botao de movimento em direcao a parede e se não estiver colidindo com o chao, ele fara o sliding
         {
-            playerAnimController.SetBool("isSliding",true);
+            playerAnimController.SetBool("isSliding", true);
             IsSliding = true;
             rig.velocity = new Vector2(rig.velocity.x, -2); // Deslizando
         }
         else
         {
             IsSliding = false;
-            playerAnimController.SetBool("isSliding",false);
+            playerAnimController.SetBool("isSliding", false);
         }
     }
 
@@ -312,39 +301,37 @@ public class PlayerController : MonoBehaviour
         IsWallJump = false;
         CanMove = true;
     }
-void SoundPlayer()
-{
+
+    void SoundPlayer()
+    {
         if(Input.GetKeyDown(KeyCode.W) && IsGround == true) // pulo
         {
            soundSource.PlayOneShot(soundClipPlayer[1]);
-           
         }
 
-         if(Input.GetKeyDown(KeyCode.A ) || Input.GetKeyDown(KeyCode.D) )
-         {
+        if(Input.GetKeyDown(KeyCode.A ) || Input.GetKeyDown(KeyCode.D))
+        {
             if(IsGroundTimerJumpCoyote > 0 && IsGround)
             {
                 soundSource.clip = soundClipPlayer[0];
                 soundSource.loop = true;
                 soundSource.Play();
             }
+        }
 
-         }
-         if(directionPlayerH == 0 && !Input.GetKeyDown(KeyCode.A ) && !Input.GetKeyDown(KeyCode.D) )
-         {
+        if(directionPlayerH == 0 && !Input.GetKeyDown(KeyCode.A ) && !Input.GetKeyDown(KeyCode.D))
+        {
             soundSource.loop = false;
-         }
-}
+        }
+    }
         
-
-    
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnTriggerEnter2D(Collider2D col) 
+    {
         if(col.gameObject.tag == "Diamond")
         {
             SpawnDiamonds.DiamondsPlayerCollect++;
             SpawnDiamonds.CanSpawnDiamond = true;
-            col.gameObject.SetActive(false);
-            
+            col.gameObject.SetActive(false); 
         }
 
         if(col.gameObject.tag == "Door")
@@ -372,6 +359,8 @@ void SoundPlayer()
         float dur = 1.0f;
 
         introSeq.Append(spritePlayer.DOFade(1f, dur).OnComplete(()=> CanMove = true).SetDelay(.5f));
-        introSeq.Join(transform.DOMoveX(transform.position.x + 0.5f, dur));
+        introSeq.InsertCallback(0f, ()=> playerAnimController.SetBool("isWalking", true));
+        introSeq.Join(transform.DOMoveX(transform.position.x + 1f, dur + 0.5f));
+        introSeq.AppendCallback(()=> playerAnimController.SetBool("isWalking", false));
     }
 }

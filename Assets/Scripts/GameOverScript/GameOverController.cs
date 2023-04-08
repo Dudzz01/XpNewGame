@@ -5,20 +5,26 @@ using UnityEngine;
 public class GameOverController : MonoBehaviour
 {
     public static bool gameContinue; // esse é o game over
-    [SerializeField]private GameObject gameOverObject;
+    [SerializeField] private GameObject gameOverObject;
 
     private float durGameOver;
 
     private void Start()
     {
         durGameOver = 0;
+        gameContinue = true;
+
+        gameContinue = GameObject.Find("UI/GameOver").GetComponent<Transform>().gameObject;
     }
 
     private void Update()
     {
-
         VerifyGameOver();
 
+        if(gameOverObject == null)
+        {
+            gameOverObject = GameObject.Find("UI/GameOver").GetComponent<Transform>().gameObject;
+        }
     }
 
     public void VerifyGameOver()
@@ -29,12 +35,10 @@ public class GameOverController : MonoBehaviour
         {
             durGameOver += Time.deltaTime;
 
-            if(durGameOver >=1.7f) // se o player nao esta mais vivo, o game over receberá false
+            if(durGameOver >= 1.7f) // se o player nao esta mais vivo, o game over receberá false
             {
-                //Debug.Log(gameContinue);
-                gameOverObject.SetActive(true);
+                gameOverObject.transform.GetChild(0).gameObject.SetActive(true);
             } 
         }
-        
     }
 }
