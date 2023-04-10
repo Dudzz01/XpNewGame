@@ -332,20 +332,20 @@ public class PlayerController : MonoBehaviour
     {
         if(col.gameObject.tag == "Diamond")
         {
-            SpawnDiamonds.DiamondsPlayerCollect++;
-            SpawnDiamonds.CanSpawnDiamond = true;
+            SpawnDiamonds.collectedDiamonds++;
+            SpawnDiamonds.canSpawnDiamond = true;
             col.gameObject.SetActive(false);
             
         }
 
         if(col.gameObject.tag == "Door")
         {
-            if(SpawnDiamonds.canPassNextPhase == true && playerIsAlive == true)
+            if(SpawnDiamonds.canPassNextLevel == true && playerIsAlive == true)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                SpawnDiamonds.DiamondsPlayerCollect = 0;
-                SpawnDiamonds.CanSpawnDiamond = false;
-                SpawnDiamonds.canPassNextPhase = false;
+                SpawnDiamonds.collectedDiamonds = 0;
+                SpawnDiamonds.canSpawnDiamond = false;
+                SpawnDiamonds.canPassNextLevel = false;
             }
         }
     }

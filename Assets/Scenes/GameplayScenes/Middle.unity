@@ -1284,7 +1284,7 @@ PrefabInstance:
     - target: {fileID: 3685476714389301650, guid: fd36c43d717dafc46b6dd19b6974650b,
         type: 3}
       propertyPath: maxDiamondsCollect
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3685476714389301650, guid: fd36c43d717dafc46b6dd19b6974650b,
         type: 3}

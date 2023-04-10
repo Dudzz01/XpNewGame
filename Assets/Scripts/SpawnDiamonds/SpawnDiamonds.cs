@@ -7,25 +7,25 @@ using TMPro;
 public class SpawnDiamonds : MonoBehaviour
 {
    [Header("References")]
-   [SerializeField] private GameObject[] diamondsArray = new GameObject[10];
-   [SerializeField] private GameObject door;
-   [SerializeField] public GameObject DiamondInScene {get; set;}
+   [SerializeField] GameObject[] diamondsArray = new GameObject[10];
+   [SerializeField] GameObject door;
+   [SerializeField] GameObject activeDiamond {get; set;}
+   [SerializeField] TextMeshProUGUI counterText;
+
+   [Header("Properties")]
    [SerializeField] const int maxDiamondsCollect = 10;
-   [SerializeField] private TextMeshProUGUI counterText;
-
-   public static int DiamondsPlayerCollect{get; set;}
+   [SerializeField] public static int collectedDiamonds{get; set;}
    private int indexDiamondsList;
-
-   public static bool CanSpawnDiamond {get; set;}
-   public static bool canPassNextPhase {get; set;}
+   public static bool canSpawnDiamond {get; set;}
+   public static bool canPassNextLevel {get; set;}
 
    private void Start()
    {
       indexDiamondsList = 0;
-      DiamondsPlayerCollect = 0;
-      DiamondInScene = GameObject.FindGameObjectWithTag("Diamond");
-      CanSpawnDiamond = false;
-      canPassNextPhase = false;
+      collectedDiamonds = 0;
+      activeDiamond = GameObject.FindGameObjectWithTag("Diamond");
+      canSpawnDiamond = false;
+      canPassNextLevel = false;
 
       FillDiamondArray();
       FillDiamondText();
@@ -34,14 +34,14 @@ public class SpawnDiamonds : MonoBehaviour
 
    private void Update() 
    {
-      if(maxDiamondsCollect <= DiamondsPlayerCollect)
+      if(maxDiamondsCollect <= collectedDiamonds)
       {
          // pode passar para a proxima fase
-         canPassNextPhase = true;
+         canPassNextLevel = true;
          door.GetComponent<SpriteRenderer>().color = Color.green;
       }
 
-      counterText.text = DiamondsPlayerCollect.ToString() + "/" + maxDiamondsCollect.ToString();
+      counterText.text = collectedDiamonds.ToString() + "/" + maxDiamondsCollect.ToString();
 
       SpawnDiamondsScene();
       CheckNullStatus();
@@ -52,6 +52,8 @@ public class SpawnDiamonds : MonoBehaviour
       if(door == null || counterText == null)
       {
          indexDiamondsList = 0;
+         canPassNextLevel = false;
+         collectedDiamonds = 0;
 
          FillDiamondArray();
          FillDiamondText();
@@ -68,7 +70,7 @@ public class SpawnDiamonds : MonoBehaviour
          diamondsArray[i] = diamondHolder.transform.GetChild(i).gameObject;
       }
 
-      print("FillDiamondArray()");
+      //print("FillDiamondArray()");
    }
 
    void FillDiamondText()
@@ -83,14 +85,12 @@ public class SpawnDiamonds : MonoBehaviour
 
    public void SpawnDiamondsScene()
    {
-      if(CanSpawnDiamond == true && diamondsArray.Length > indexDiamondsList)
+      if(canSpawnDiamond == true && diamondsArray.Length > indexDiamondsList)
       {
          indexDiamondsList++;
-         DiamondInScene = diamondsArray[indexDiamondsList];
-         DiamondInScene.SetActive(true);
-         CanSpawnDiamond = false;
+         activeDiamond = diamondsArray[indexDiamondsList];
+         activeDiamond.SetActive(true);
+         canSpawnDiamond = false;
       }
-
-      Debug.Log(DiamondInScene);
    }
 }
