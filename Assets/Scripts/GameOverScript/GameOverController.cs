@@ -12,13 +12,22 @@ public class GameOverController : MonoBehaviour
     private void Start()
     {
         durGameOver = 0;
+        gameOverObject.SetActive(false);
     }
 
     private void Update()
     {
-
         VerifyGameOver();
+        AssignObject();
+    }
 
+    void AssignObject()
+    {
+        if(gameOverObject == null)
+        {
+            gameOverObject = GameObject.Find("UI/GameOverHolder").transform.gameObject;
+            gameOverObject.SetActive(false);
+        }
     }
 
     public void VerifyGameOver()
@@ -29,12 +38,11 @@ public class GameOverController : MonoBehaviour
         {
             durGameOver += Time.deltaTime;
 
-            if(durGameOver >=1.7f) // se o player nao esta mais vivo, o game over receberá false
+            if(durGameOver >= 1.7f) // se o player nao esta mais vivo, o game over receberá false
             {
                 //Debug.Log(gameContinue);
                 gameOverObject.SetActive(true);
             } 
         }
-        
     }
 }

@@ -7,14 +7,15 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private EnergyBar energyBar;
-
-    #region ComponentsVariablesOfPlayer
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] private SpriteRenderer spritePlayer;
+    [SerializeField] private Animator playerAnimController;
 
+    [Header("Audio")]
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip[] soundClipPlayer = new AudioClip[3];
-    private Animator playerAnimController;
+    
+
     private static PlayerController _Instance;
 
         public static PlayerController Instance
@@ -26,8 +27,6 @@ public class PlayerController : MonoBehaviour
                 return _Instance;
             }
         }
-        
-    #endregion
     #region MovimentPlayerVariables
 
     public float directionPlayerH{get; private set;} // direcao horizontal do player
@@ -86,6 +85,8 @@ public class PlayerController : MonoBehaviour
         directionPlayerY = Input.GetAxisRaw("Vertical"); // variavel para saber a direcao y do player
 
         IsGround = Physics2D.OverlapBox((Vector2)transformFeet.position ,new Vector2(0.25f,0.20f),0,groundMask) || Physics2D.OverlapBox(transformFeet.position,new Vector2(0.25f,0.24f),0,wallJumpMask); // verifica se o pé do player está colidindo com o chao
+        playerAnimController.SetBool("isGrounded", IsGround);
+
         IsWallRight = Physics2D.OverlapCircle((Vector2)transformArm.position+rightOffSetArm,0.19f,wallJumpMask); // retornará true se o colisor do braco direito do player estiver colidindo na parede
         IsWallLeft = Physics2D.OverlapCircle((Vector2)transformArm.position+leftOffSetArm,0.19f,wallJumpMask); // retornará true se o colisor do braco esquerdo do player estiver colidindo na parede
 
@@ -105,19 +106,14 @@ public class PlayerController : MonoBehaviour
         if(playerIsAlive == false)
         {
             playerAnimController.SetTrigger("dead");
-             
+            rig.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
         
-        
-
        durAnimGameOver =  playerAnimController.GetCurrentAnimatorStateInfo(0).length;
-        
     }
 
     private void FixedUpdate()
     {
-        
-
         if(energyBar.remainingEnergy <= 0f)
         {
             saveEnergyValor = 0;
@@ -127,7 +123,6 @@ public class PlayerController : MonoBehaviour
         {
             playerIsAlive = false;
         }
-        
 
         if(playerIsAlive == true)
         {
@@ -140,7 +135,6 @@ public class PlayerController : MonoBehaviour
             playerIsAlive = false;
             CanMove = false;
         }
-        
     }
 
     public void Walk()
@@ -158,20 +152,18 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(directionPlayerH!=0  && IsGround)
+        if(directionPlayerH != 0  && IsGround)
         {
             playerAnimController.SetBool("isWalking", true);
-            
-            
         }
 
         if(directionPlayerH > 0)
         {
-                spritePlayer.flipX = false;
+            spritePlayer.flipX = false;
         }
         else if(directionPlayerH < 0)
         {
-                spritePlayer.flipX = true;
+            spritePlayer.flipX = true;
         }
         #endregion
 
@@ -195,14 +187,14 @@ public class PlayerController : MonoBehaviour
             }
             
             //Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
-            rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH,-8.5f,8.5f),rig.velocity.y);
+            rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH, -8.5f, 8.5f), rig.velocity.y);
         }
     }
 
     private void JumpAction()
     {      
         //first jump
-        rig.velocity = new Vector2(rig.velocity.x,powerJump);
+        rig.velocity = new Vector2(rig.velocity.x, powerJump);
         jump = false;
         doubleJump = !doubleJump;
     }
@@ -212,7 +204,7 @@ public class PlayerController : MonoBehaviour
         #region AnimJump
         if(!IsGround && !IsSliding)
         {
-            playerAnimController.SetBool("isJumping",true);
+            playerAnimController.SetBool("isJumping", true);
             soundSource.clip = soundClipPlayer[1];
             soundSource.loop = false;
             soundSource.volume = 0.05f;
@@ -220,12 +212,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            playerAnimController.SetBool("isJumping",false);
+            playerAnimController.SetBool("isJumping", false);
         }
         
         #endregion
 
-        if( Input.GetKeyDown(KeyCode.W) && IsGroundTimerJumpCoyote>0) // Se apertar W e colidir com o chao... 
+        if( Input.GetKeyDown(KeyCode.W) && IsGroundTimerJumpCoyote > 0) // Se apertar W e colidir com o chao... 
         {
             jump = true;
             IsGroundTimerJumpCoyote = 0;
@@ -242,7 +234,7 @@ public class PlayerController : MonoBehaviour
             IsWallJump = true;
             CanMove = false;
             IsWallJumping = true;
-            Invoke("StopWallJump",0.2f);  //Em 0.2 segundos, o metodo StopWallJump é invocado
+            Invoke("StopWallJump", 0.2f);  //Em 0.2 segundos, o metodo StopWallJump é invocado
         }
 
         return jump;
@@ -271,7 +263,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             IsGroundTimerJumpCoyote-=Time.deltaTime; // se o player nao estiver colidindo com o chao, a variavel ficará diminuindo até 0, logo o player consegue pular mesmo no ar com a condicao dessa variavel ser maior que 0 (Efeito Coyote)
-           
         }
     }
 
@@ -279,14 +270,14 @@ public class PlayerController : MonoBehaviour
     {
         if((IsWallRight && directionPlayerH == 1 || IsWallLeft && directionPlayerH == -1) && !IsGround) // se estiver colidindo com a parede e pressionando o botao de movimento em direcao a parede e se não estiver colidindo com o chao, ele fara o sliding
         {
-            playerAnimController.SetBool("isSliding",true);
+            playerAnimController.SetBool("isSliding", true);
             IsSliding = true;
             rig.velocity = new Vector2(rig.velocity.x, -2); // Deslizando
         }
         else
         {
             IsSliding = false;
-            playerAnimController.SetBool("isSliding",false);
+            playerAnimController.SetBool("isSliding", false);
         }
     }
 
@@ -296,7 +287,7 @@ public class PlayerController : MonoBehaviour
         {   
             if(IsWallRight)
             {
-               rig.velocity = new Vector2(-9,12);
+               rig.velocity = new Vector2(-9, 12);
                spritePlayer.flipX = true; // Váriavel que basicamente inverte a sprite para condizer com o movimento do player
             }
             if(IsWallLeft)
@@ -312,33 +303,33 @@ public class PlayerController : MonoBehaviour
         IsWallJump = false;
         CanMove = true;
     }
-void SoundPlayer()
-{
+    
+    void SoundPlayer()
+    {
         if(Input.GetKeyDown(KeyCode.W) && IsGround == true) // pulo
         {
            soundSource.PlayOneShot(soundClipPlayer[1]);
            
         }
 
-         if(Input.GetKeyDown(KeyCode.A ) || Input.GetKeyDown(KeyCode.D) )
-         {
+        if(Input.GetKeyDown(KeyCode.A ) || Input.GetKeyDown(KeyCode.D) )
+        {
             if(IsGroundTimerJumpCoyote > 0 && IsGround)
             {
                 soundSource.clip = soundClipPlayer[0];
                 soundSource.loop = true;
                 soundSource.Play();
             }
+        }
 
-         }
-         if(directionPlayerH == 0 && !Input.GetKeyDown(KeyCode.A ) && !Input.GetKeyDown(KeyCode.D) )
-         {
+        if(directionPlayerH == 0 && !Input.GetKeyDown(KeyCode.A ) && !Input.GetKeyDown(KeyCode.D) )
+        {
             soundSource.loop = false;
-         }
-}
+        }
+    }
         
-
-    
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnTriggerEnter2D(Collider2D col) 
+    {
         if(col.gameObject.tag == "Diamond")
         {
             SpawnDiamonds.DiamondsPlayerCollect++;
@@ -351,7 +342,7 @@ void SoundPlayer()
         {
             if(SpawnDiamonds.canPassNextPhase == true && playerIsAlive == true)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 SpawnDiamonds.DiamondsPlayerCollect = 0;
                 SpawnDiamonds.CanSpawnDiamond = false;
                 SpawnDiamonds.canPassNextPhase = false;
