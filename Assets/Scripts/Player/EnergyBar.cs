@@ -81,21 +81,15 @@ public class EnergyBar : MonoBehaviour
             {
                 case "Front":
                     isShadowed = true;
-                    Debug.Log("FRONT");
+                    //Debug.Log("FRONT");
                     break;
-
                 case "WallJumpMapSupport":
                     isShadowed = true;
-                    Debug.Log("WallJumpMap");
+                    //Debug.Log("WallJumpMap");
                     break;    
-                
                 case "Translucent":
                     isShadowed = false;
-                    Debug.Log("TRANSLUCENT");
-                    break;
-                case "Mobile":
-                    isShadowed = true;
-                    Debug.Log("MOBILE");
+                    //Debug.Log("TRANSLUCENT");
                     break;
                 default:
                     return;
@@ -103,13 +97,9 @@ public class EnergyBar : MonoBehaviour
         }
         else
         {
-                isShadowed = false;
-                Debug.Log("THERE'S NO COLLIDER");
-            
+            isShadowed = false;
+            //Debug.Log("THERE'S NO COLLIDER");
         }
-        
-
-        
     }
 
     void OnDrawGizmos()

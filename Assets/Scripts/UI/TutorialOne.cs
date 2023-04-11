@@ -5,7 +5,8 @@ using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class CanvasOne : MonoBehaviour
+
+public class TutorialOne : MonoBehaviour
 {   
     [Header("Preferences")]
 
@@ -13,7 +14,7 @@ public class CanvasOne : MonoBehaviour
     [SerializeField] Image blackCanvas;
     [SerializeField] Button mouseClick;
 
-    [SerializeField] CanvasTwo canvasTwo;
+    [SerializeField] TutorialTwo tutorialTwo;
 
     private void Awake()
     {
@@ -56,7 +57,7 @@ public class CanvasOne : MonoBehaviour
     IEnumerator passProxScene()
     {
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("CanvasTwo");
+        SceneManager.LoadScene("TutorialTwo");
         yield return null;
     }
     

@@ -46,7 +46,7 @@ public class Shocker : Enemy
         {
             if(canAnimWalk == true)
             {
-                enemyAnimController.SetInteger("CondicaoDroneAnim",1);
+                enemyAnimController.SetInteger("CondicaoDroneAnim", 1);
             }
         }
     }
@@ -65,7 +65,7 @@ public class Shocker : Enemy
         {
             if(hit.rigidbody.name == "Player" && EnergyBar.isShadowed == false)
             {
-                enemyAnimController.SetInteger("CondicaoDroneAnim",2);
+                enemyAnimController.SetInteger("CondicaoDroneAnim", 2);
                 canAnimWalk = false;
                 canShot = 1;
                 StartCoroutine(timeReloadShoot()); 
@@ -95,6 +95,8 @@ public class Shocker : Enemy
 
     protected override void OnCollisionEnter2D(Collision2D col)
     {
+        print(col.gameObject.name);
+
         if(col.gameObject.tag == "Player")
         {
             if(EnergyBar.isShadowed == false)
@@ -108,12 +110,12 @@ public class Shocker : Enemy
         if(col.gameObject.tag == "Tilemap")
         {
             movementSpeed *= -1;
-            //Debug.Log("Tilemap colission");
+            Debug.Log("Tilemap colission");
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position,-Vector2.up);
+        Gizmos.DrawRay(transform.position, -Vector2.up);
     }
 }

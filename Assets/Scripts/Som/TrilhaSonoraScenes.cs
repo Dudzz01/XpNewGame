@@ -19,7 +19,7 @@ public class TrilhaSonoraScenes : MonoBehaviour
 
     public void DestroySoundObject()
     {
-        if(scene == "Menu" || scene == "CanvasOne" || scene == "CanvasTwo" || scene == "Credits" )
+        if(scene == "Menu" || scene == "TutorialOne" || scene == "TutorialTwo" || scene == "Credits" )
         {
                 if(switchMusic == false)
                 {

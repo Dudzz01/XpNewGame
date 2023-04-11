@@ -6,7 +6,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CanvasTwo : MonoBehaviour
+public class TutorialTwo : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] GameObject player4;

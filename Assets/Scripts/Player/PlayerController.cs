@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         #endregion
             
         SoundPlayer();
-        Debug.Log(playerIsAlive);
+        //Debug.Log(playerIsAlive);
         //Animacao de morte do player
         if(playerIsAlive == false)
         {
@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour
                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingBasic, Time.deltaTime * 10f);
             }
             
-            //Debug.Log("Horzintal speed "+ horizontalSpeedPlayerH);
+            //Debug.Log("Horizontal speed "+ horizontalSpeedPlayerH);
             rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH, -8.5f, 8.5f), rig.velocity.y);
         }
     }

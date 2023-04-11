@@ -31,12 +31,12 @@ public class ChooseOptionsMenu : MonoBehaviour
 
     public void SelectPlay()
     {
-        SceneManager.LoadScene("Introduction"); // Dudu: Setar os nomes das cenas quando forem criadas
+        SceneManager.LoadScene("Level1"); // Dudu: Setar os nomes das cenas quando forem criadas
     }
 
      public void TutorialComandos()
      {
-        SceneManager.LoadScene("CanvasOne");  // Dudu: Setar os nomes das cenas quando forem criadas
+        SceneManager.LoadScene("TutorialOne");  // Dudu: Setar os nomes das cenas quando forem criadas
      }
 
     public void Creditos()
