@@ -12,23 +12,14 @@ public class GameOverController : MonoBehaviour
     private void Start()
     {
         durGameOver = 0;
-        gameOverObject.SetActive(false);
     }
 
     private void Update()
     {
         VerifyGameOver();
-        AssignObject();
     }
 
-    void AssignObject()
-    {
-        if(gameOverObject == null)
-        {
-            gameOverObject = GameObject.Find("UI/GameOverHolder").transform.gameObject;
-            gameOverObject.SetActive(false);
-        }
-    }
+    
 
     public void VerifyGameOver()
     {
