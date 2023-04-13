@@ -23,7 +23,7 @@ public class Shocker : Enemy
 
     private void Update()
     {
-        hit = Physics2D.Raycast(transform.position,-Vector2.up,1000,layerMaskPlayer); // raycast hit que coleta as informacoes do objeto no qual está colidindo com o raio
+        hit = Physics2D.Raycast(transform.position, -Vector2.up, 1000, layerMaskPlayer); // raycast hit que coleta as informacoes do objeto no qual está colidindo com o raio
 
         Move();
 
@@ -95,7 +95,7 @@ public class Shocker : Enemy
 
     protected override void OnCollisionEnter2D(Collision2D col)
     {
-        print(col.gameObject.name);
+        print(col.gameObject.tag);
 
         if(col.gameObject.tag == "Player")
         {
@@ -106,11 +106,9 @@ public class Shocker : Enemy
                 //Debug.Log("Matou o PLAYER");
             }
         }
-
-        if(col.gameObject.tag == "Tilemap")
+        else if(col.gameObject.tag == "Tilemap")
         {
-            movementSpeed *= -1;
-            Debug.Log("Tilemap colission");
+            movementSpeed *= -1f;
         }
     }
 

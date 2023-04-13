@@ -85,7 +85,7 @@ public class SpawnDiamonds : MonoBehaviour
 
    public void SpawnDiamondsScene()
    {
-      if(canSpawnDiamond == true && diamondsArray.Length > indexDiamondsList)
+      if(canSpawnDiamond == true && diamondsArray.Length >= indexDiamondsList)
       {
          indexDiamondsList++;
          activeDiamond = diamondsArray[indexDiamondsList];
