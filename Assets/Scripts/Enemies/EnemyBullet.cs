@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rig;
+    [SerializeField] protected GameObject bulletPoolEnemy;
      public Vector2 dirBullet{get; set;}
      [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip[] soundClipBullet = new AudioClip[1];
@@ -13,6 +14,7 @@ public class EnemyBullet : MonoBehaviour
     
     void Start()
     {
+        bulletPoolEnemy = ObjectPooling.Instance.gameObject;
         soundSource.clip = soundClipBullet[0];
         soundSource.volume = 0.05f;
         soundSource.Play();
@@ -26,12 +28,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if(col.gameObject.tag == "Tilemap")
         {
-            Destroy(gameObject);
+            bulletPoolEnemy.GetComponent<ObjectPooling>().SetBulletInPool(gameObject);
         }
 
           if(col.gameObject.tag == "Player")
           {
-              Destroy(gameObject);
+              bulletPoolEnemy.GetComponent<ObjectPooling>().SetBulletInPool(gameObject);
 
               if(EnergyBar.isShadowed == false)
               {

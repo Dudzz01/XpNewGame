@@ -2474,6 +2474,91 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 215327314}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &272484735
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.72716415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.837932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.440493
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097694412577855175, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367214640895336441, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: m_Name
+      value: ObjectPoolingBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734415550129050564, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8508638124374106644, guid: 9d57d74c542c91b4fb0f1e03c4b38e54,
+        type: 3}
+    - target: {fileID: 7734415550129050564, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: quantOfBullets
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734415550129050564, guid: d4082761b3b63e14483affe0671cd0e2,
+        type: 3}
+      propertyPath: objectParentHiearchy
+      value: 
+      objectReference: {fileID: 1239189815}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4082761b3b63e14483affe0671cd0e2, type: 3}
 --- !u!1001 &278740858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2598,6 +2683,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: 309799185076016576, guid: 17a2a973a0023644095ba5a16e4870f7,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 7575852779590573380, guid: 17a2a973a0023644095ba5a16e4870f7,
         type: 3}
       propertyPath: m_Name
@@ -2677,6 +2767,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -4192,6 +4287,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -11970,6 +12070,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: 309799185076016576, guid: 17a2a973a0023644095ba5a16e4870f7,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 7575852779590573380, guid: 17a2a973a0023644095ba5a16e4870f7,
         type: 3}
       propertyPath: m_Name
@@ -12124,6 +12229,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -12277,6 +12387,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5732850928881912861, guid: d705168e9396f5e4889117d61ea557b3,
     type: 3}
   m_PrefabInstance: {fileID: 846287504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &881541530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4367214640895336441, guid: d4082761b3b63e14483affe0671cd0e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 272484735}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &899018882
 GameObject:
@@ -15314,6 +15430,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1235875116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1239189814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239189815}
+  m_Layer: 0
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1239189815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239189814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1421360328}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1248050286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15486,6 +15632,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: 1055649533364260686, guid: cb2396eb61d41ac43b6196b254366054,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 1463333386892746967, guid: cb2396eb61d41ac43b6196b254366054,
         type: 3}
       propertyPath: m_RootOrder
@@ -15657,6 +15808,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -15763,6 +15919,7 @@ Transform:
   - {fileID: 906146002}
   - {fileID: 1048417219}
   - {fileID: 434089963}
+  - {fileID: 1239189815}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15993,6 +16150,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -16068,6 +16230,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -16588,6 +16755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -16668,6 +16840,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: 309799185076016576, guid: 17a2a973a0023644095ba5a16e4870f7,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 7575852779590573380, guid: 17a2a973a0023644095ba5a16e4870f7,
         type: 3}
       propertyPath: m_Name
@@ -16758,6 +16935,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: 3487177929664068668, guid: 0efeae42d4ba0d347a9841e435a37740,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 4093052626628660705, guid: 0efeae42d4ba0d347a9841e435a37740,
         type: 3}
       propertyPath: m_Name
@@ -16837,6 +17019,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: 3487177929664068668, guid: 0efeae42d4ba0d347a9841e435a37740,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 4093052626628660705, guid: 0efeae42d4ba0d347a9841e435a37740,
         type: 3}
       propertyPath: m_Name
@@ -17719,6 +17906,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.022601128
       objectReference: {fileID: 0}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -19390,6 +19582,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1928405809}
+    - target: {fileID: 309799185076016576, guid: 17a2a973a0023644095ba5a16e4870f7,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 7575852779590573380, guid: 17a2a973a0023644095ba5a16e4870f7,
         type: 3}
       propertyPath: m_Name
@@ -20004,6 +20201,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name
@@ -20079,6 +20281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 881541530}
     - target: {fileID: 3520708468779457757, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: m_Name

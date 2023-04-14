@@ -24,7 +24,10 @@ public class Shooter : Enemy
 
         if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
         {
-            GameObject bulletEm = Instantiate(bulletEnemy, transform.position, Quaternion.identity);
+            // GameObject bulletEm = Instantiate(bulletEnemy, transform.position, Quaternion.identity);
+            GameObject bulletEm = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
+            bulletEm.transform.position = transform.position;
+            bulletEm.transform.rotation = Quaternion.identity;
             Vector2 dirBullet = target.transform.position - transform.position;
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;
         }

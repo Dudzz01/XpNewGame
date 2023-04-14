@@ -61,7 +61,9 @@ public class Boo : Enemy
 
         if(posBeetweenEnemyToPlayer < 8 )
         {
-            GameObject bulletEm = Instantiate(bulletEnemy, transform.position,Quaternion.identity);
+            GameObject bulletEm = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
+            bulletEm.transform.position = transform.position;
+            bulletEm.transform.rotation = Quaternion.identity;
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;
         }
 

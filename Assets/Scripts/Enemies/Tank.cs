@@ -80,7 +80,9 @@ public class Tank : Enemy
             if(hit.rigidbody.name == "Player" && EnergyBar.isShadowed == false)
             {
                 enemyAnimController.SetInteger("CondicaoEnemyMove", 2); // animacao de tiro
-                GameObject bulletEm = Instantiate(bulletEnemy, transform.position, Quaternion.identity);
+                GameObject bulletEm = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
+                bulletEm.transform.position = transform.position;
+                bulletEm.transform.rotation = Quaternion.identity;
                 bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;
                 canShot = 1;
                 

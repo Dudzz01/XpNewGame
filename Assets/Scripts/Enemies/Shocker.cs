@@ -80,7 +80,9 @@ public class Shocker : Enemy
     {
         yield return new WaitForSeconds(0.2f);
 
-        GameObject enemyP = Instantiate(bulletEnemy,transform.position,Quaternion.identity);
+        GameObject enemyP = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
+        enemyP.transform.position = transform.position;
+        enemyP.transform.rotation = Quaternion.identity;
         enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
         canAnimWalk = true;
 

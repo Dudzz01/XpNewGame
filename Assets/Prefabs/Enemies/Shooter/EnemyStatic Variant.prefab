@@ -118,6 +118,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7885368920422091650, guid: 6c6442d4c8f19a34cbbb6b675e54a150,
+        type: 3}
+      propertyPath: bulletPoolEnemy
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8525855055911203241, guid: 6c6442d4c8f19a34cbbb6b675e54a150,
         type: 3}
       propertyPath: m_Name

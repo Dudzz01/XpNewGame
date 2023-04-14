@@ -7,6 +7,7 @@ public abstract class Enemy : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] protected GameObject bulletEnemy;
+    [SerializeField] protected GameObject bulletPoolEnemy;
     [SerializeField] protected GameObject target;
     [SerializeField] protected Animator enemyAnimController;
     
