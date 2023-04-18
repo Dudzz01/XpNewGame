@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2769,6 +2769,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
       propertyPath: bulletPoolEnemy
       value: 
       objectReference: {fileID: 881541530}
@@ -4287,6 +4292,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: bulletPoolEnemy
@@ -15634,6 +15644,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1055649533364260686, guid: cb2396eb61d41ac43b6196b254366054,
         type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
+    - target: {fileID: 1055649533364260686, guid: cb2396eb61d41ac43b6196b254366054,
+        type: 3}
       propertyPath: bulletPoolEnemy
       value: 
       objectReference: {fileID: 881541530}
@@ -16152,6 +16167,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
       propertyPath: bulletPoolEnemy
       value: 
       objectReference: {fileID: 881541530}
@@ -16230,6 +16250,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: bulletPoolEnemy
@@ -16755,6 +16780,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: bulletPoolEnemy
@@ -17906,6 +17936,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.022601128
       objectReference: {fileID: 0}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: bulletPoolEnemy
@@ -20203,6 +20238,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
       propertyPath: bulletPoolEnemy
       value: 
       objectReference: {fileID: 881541530}
@@ -20281,6 +20321,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480977238}
     m_Modifications:
+    - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1928405809}
     - target: {fileID: -3136484702454421320, guid: 46061f46b8ce0044fb7c81bb4df4b8ec,
         type: 3}
       propertyPath: bulletPoolEnemy

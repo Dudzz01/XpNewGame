@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
         }
         
        durAnimGameOver =  playerAnimController.GetCurrentAnimatorStateInfo(0).length;
+
+      
     }
 
     private void FixedUpdate()
@@ -135,6 +137,8 @@ public class PlayerController : MonoBehaviour
             playerIsAlive = false;
             CanMove = false;
         }
+
+         Debug.Log("Delta time "+ (Time.deltaTime * 10)); 
     }
 
     public void Walk()
@@ -176,6 +180,7 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) < 0.01f)
             {
                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingWhenStopping, Time.deltaTime * 10f);
+                //Debug.Log("Velocidade ao parar do player: " + horizontalSpeedPlayerH);
             }
             else if (Mathf.Sign(Input.GetAxisRaw("Horizontal")) != Mathf.Sign(horizontalSpeedPlayerH))
             {
@@ -185,10 +190,12 @@ public class PlayerController : MonoBehaviour
             {
                 horizontalSpeedPlayerH *= Mathf.Pow(1f - fHorizontalDampingBasic, Time.deltaTime * 10f);
             }
+
             
-            //Debug.Log("Horizontal speed "+ horizontalSpeedPlayerH);
             rig.velocity = new Vector2(Mathf.Clamp(horizontalSpeedPlayerH, -8.5f, 8.5f), rig.velocity.y);
         }
+
+       
     }
 
     private void JumpAction()
@@ -290,9 +297,9 @@ public class PlayerController : MonoBehaviour
                rig.velocity = new Vector2(-9, 12);
                spritePlayer.flipX = true; // Váriavel que basicamente inverte a sprite para condizer com o movimento do player
             }
-            if(IsWallLeft)
+            if(IsWallLeft)                      
             {
-                rig.velocity = new Vector2(9,12);
+                rig.velocity = new Vector2(9,12);             
                 spritePlayer.flipX = false;    
             }
         }
