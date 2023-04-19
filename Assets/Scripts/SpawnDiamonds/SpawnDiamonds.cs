@@ -38,7 +38,7 @@ public class SpawnDiamonds : MonoBehaviour
       {
          // pode passar para a proxima fase
          canPassNextLevel = true;
-         door.GetComponent<SpriteRenderer>().color = Color.green;
+         door.GetComponent<Animator>().SetTrigger("levelComplete");
       }
 
       counterText.text = collectedDiamonds.ToString() + "/" + maxDiamondsCollect.ToString();
