@@ -40,7 +40,7 @@ public class ChooseOptionsMenu : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void Tutorial()
     {
-        SceneManager.LoadScene("TutorialOne");  // Dudu: Setar os nomes das cenas quando forem criadas
+        SceneManager.LoadScene("Tutorial");  // Dudu: Setar os nomes das cenas quando forem criadas
     }
 
     public void Credits()
