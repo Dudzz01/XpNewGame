@@ -172,9 +172,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 640, y: 360}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.498
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -256,7 +256,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 384, y: 216}
+  m_SizeDelta: {x: 484, y: 316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460199019
 MonoBehaviour:
@@ -393,8 +393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -140}
-  m_SizeDelta: {x: 402, y: 234}
+  m_AnchoredPosition: {x: 16, y: -190}
+  m_SizeDelta: {x: 502, y: 334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601730730
 MonoBehaviour:
@@ -458,7 +458,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956951709}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 421cab40667b52346870a00e7db7e298, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 5ac84d75c47a0aa48b78f7abca2d2e35, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 64}
+  m_AnchoredPosition: {x: 10, y: 62}
   m_SizeDelta: {x: 384, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131380667
