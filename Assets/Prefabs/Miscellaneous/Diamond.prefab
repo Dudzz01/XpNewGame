@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5732850928881912866}
   - component: {fileID: 5732850928881912867}
   - component: {fileID: 5732850928881912860}
+  - component: {fileID: 289570433380904855}
+  - component: {fileID: 891397506271953181}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Diamond
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1056693781
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2801231552284419624, guid: d82e20053d5045f409c706b709212570,
+  m_Sprite: {fileID: 6586461156150141773, guid: 51c03a1ff85835e4296558ecbb148d5e,
     type: 3}
   m_Color: {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
   m_FlipX: 0
@@ -99,3 +101,34 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.03}
   m_Size: {x: 0.4, y: 0.6}
   m_Direction: 0
+--- !u!95 &289570433380904855
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732850928881912861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e652108bb15856d4a90df9b209d4e19d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &891397506271953181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732850928881912861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69daacac0a1deb242ad5072ad115adf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
