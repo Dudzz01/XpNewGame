@@ -202,11 +202,7 @@ MonoBehaviour:
   energyBar: {fileID: 0}
   rig: {fileID: 743865917408812981}
   spritePlayer: {fileID: 4489700704259571410}
-  soundSource: {fileID: -16730560390356832}
-  soundClipPlayer:
-  - {fileID: 8300000, guid: 1bade820b09e45e4abb2f0001dd25d1e, type: 3}
-  - {fileID: 8300000, guid: 3247bbad4aa56194fad927a0a286e9b6, type: 3}
-  - {fileID: 8300000, guid: a27f2cd92504a1e4e836491a15471c66, type: 3}
+  playerAnimController: {fileID: 0}
   fHorizontalDampingBasic: -3
   fHorizontalDampingWhenStopping: 1
   fHorizontalDampingWhenTurning: 1
@@ -234,9 +230,6 @@ MonoBehaviour:
   rayMaskGround:
     serializedVersion: 2
     m_Bits: 256
-  rayMaskWallJump:
-    serializedVersion: 2
-    m_Bits: 2048
   rayDistance: 1000
   remainingEnergy: 1
   remainingEnergyImage: {fileID: 0}
@@ -266,7 +259,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8137376241055943006}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

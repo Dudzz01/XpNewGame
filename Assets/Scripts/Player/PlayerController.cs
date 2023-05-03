@@ -10,10 +10,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] private SpriteRenderer spritePlayer;
     [SerializeField] private Animator playerAnimController;
-
-    [Header("Audio")]
-    [SerializeField] private AudioSource soundSource;
-    [SerializeField] private AudioClip[] soundClipPlayer = new AudioClip[3];
     
 
     private static PlayerController _Instance;
@@ -61,6 +57,8 @@ public class PlayerController : MonoBehaviour
     public float durAnimGameOver {get; set;}
     #endregion
 
+    
+
     void Start()
     {
         FadePlayer();
@@ -100,7 +98,7 @@ public class PlayerController : MonoBehaviour
             }
         #endregion
             
-        SoundPlayer();
+        
         //Debug.Log(playerIsAlive);
         //Animacao de morte do player
         if(playerIsAlive == false)
@@ -150,10 +148,6 @@ public class PlayerController : MonoBehaviour
            // playerAnimController.SetInteger("Condicao Nothing to AnimPlayer",5); // numero default para iniciar qualquer animacao na tree animation
             playerAnimController.SetBool("isWalking", false);
             
-            if(soundSource.clip == soundClipPlayer[0])
-            {
-                soundSource.loop = false;
-            }
         }
 
         if(directionPlayerH != 0  && IsGround)
@@ -212,10 +206,6 @@ public class PlayerController : MonoBehaviour
         if(!IsGround && !IsSliding)
         {
             playerAnimController.SetBool("isJumping", true);
-            soundSource.clip = soundClipPlayer[1];
-            soundSource.loop = false;
-            soundSource.volume = 0.05f;
-            //soundSource.Play();
         }
         else
         {
@@ -311,29 +301,7 @@ public class PlayerController : MonoBehaviour
         CanMove = true;
     }
     
-    void SoundPlayer()
-    {
-        if(Input.GetKeyDown(KeyCode.W) && IsGround == true) // pulo
-        {
-           soundSource.PlayOneShot(soundClipPlayer[1]);
-           
-        }
-
-        if(Input.GetKeyDown(KeyCode.A ) || Input.GetKeyDown(KeyCode.D) )
-        {
-            if(IsGroundTimerJumpCoyote > 0 && IsGround)
-            {
-                soundSource.clip = soundClipPlayer[0];
-                soundSource.loop = true;
-                soundSource.Play();
-            }
-        }
-
-        if(directionPlayerH == 0 && !Input.GetKeyDown(KeyCode.A ) && !Input.GetKeyDown(KeyCode.D) )
-        {
-            soundSource.loop = false;
-        }
-    }
+   
         
     private void OnTriggerEnter2D(Collider2D col) 
     {

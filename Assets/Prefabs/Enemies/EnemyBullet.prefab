@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: -3745162108638303873}
+  bulletPoolEnemy: {fileID: 0}
   soundSource: {fileID: -5405538526651105743}
   soundClipBullet:
   - {fileID: 8300000, guid: b05a844e81ca787478e2db73a0168ce4, type: 3}
@@ -178,16 +179,17 @@ AudioSource:
   m_GameObject: {fileID: 8508638124374106644}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4585291146998402841, guid: 4e50e341f6f3e3241919b08cb0be8c71,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.47
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 111
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
