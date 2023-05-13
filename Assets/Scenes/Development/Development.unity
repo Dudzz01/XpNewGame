@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &27844395 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4006213286140784923, guid: 2d7d43d2927731741bbd5e1f242a944f,
+    type: 3}
+  m_PrefabInstance: {fileID: 476403499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &80954578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1910,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1810155654}
     m_Modifications:
+    - target: {fileID: -8667513317160042574, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8667513317160042574, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: particleSystemsPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 27844395}
+    - target: {fileID: -8667513317160042574, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: particleSystemsPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 547975456}
     - target: {fileID: -2570988179594456717, guid: 2d7d43d2927731741bbd5e1f242a944f,
         type: 3}
       propertyPath: soundClipPlayer.Array.data[0]
@@ -1924,10 +1945,45 @@ PrefabInstance:
       propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2991689961843209039, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006213286140784920, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4006213286140784921, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006213286140784921, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006213286140784923, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006213286140784923, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4489700704259571410, guid: 2d7d43d2927731741bbd5e1f242a944f,
         type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489700704259571410, guid: 2d7d43d2927731741bbd5e1f242a944f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4489700704259571410, guid: 2d7d43d2927731741bbd5e1f242a944f,
         type: 3}
@@ -2096,6 +2152,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d705168e9396f5e4889117d61ea557b3, type: 3}
+--- !u!198 &547975456 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6912020623777161439, guid: 2d7d43d2927731741bbd5e1f242a944f,
+    type: 3}
+  m_PrefabInstance: {fileID: 476403499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &556989517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5821597253353647651, guid: e9f4d8e889c15ef40acba31cbadb1c76,
@@ -12559,6 +12621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821597253353647651, guid: e9f4d8e889c15ef40acba31cbadb1c76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5821597253353647651, guid: e9f4d8e889c15ef40acba31cbadb1c76,
         type: 3}

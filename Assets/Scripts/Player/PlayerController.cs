@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float powerJump;
     private Vector2 rightOffSetArm;
     private Vector2 leftOffSetArm;
-    private bool jump;
+    public bool Jump {get; set;}
 
     public static bool playerIsAlive;
 
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
     {      
         //first jump
         rig.velocity = new Vector2(rig.velocity.x, powerJump);
-        jump = false;
+        Jump = false;
         doubleJump = !doubleJump;
     }
 
@@ -216,12 +216,12 @@ public class PlayerController : MonoBehaviour
 
         if( Input.GetKeyDown(KeyCode.W) && IsGroundTimerJumpCoyote > 0) // Se apertar W e colidir com o chao... 
         {
-            jump = true;
+            Jump = true;
             IsGroundTimerJumpCoyote = 0;
             doubleJump = false;
         }
         
-        if(jump || doubleJump == true && Input.GetKeyDown(KeyCode.W)) //Se cumprir essa condicao, a acao do pulo é executada
+        if(Jump || doubleJump == true && Input.GetKeyDown(KeyCode.W)) //Se cumprir essa condicao, a acao do pulo é executada
         {
             JumpAction();
         }
@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour
             Invoke("StopWallJump", 0.2f);  //Em 0.2 segundos, o metodo StopWallJump é invocado
         }
 
-        return jump;
+        return Jump;
     }
 
     public void JumpMovimentEffects()
