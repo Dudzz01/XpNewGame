@@ -1052,6 +1052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_LightVolumeOpacity
       value: 0.05
       objectReference: {fileID: 0}
@@ -2130,6 +2135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -3279,6 +3289,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -3737,6 +3752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_PointLightDistance
       value: 4.5
       objectReference: {fileID: 0}
@@ -3996,6 +4016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.429
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -4539,6 +4564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.605
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -14540,6 +14570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_PointLightDistance
       value: 247.1
       objectReference: {fileID: 0}
@@ -14789,6 +14824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -15104,6 +15144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -15321,6 +15366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -16042,6 +16092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -16422,6 +16477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -16644,6 +16704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -17225,6 +17290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -17442,6 +17512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -17672,6 +17747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -18108,6 +18188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -18399,6 +18484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.609
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -18728,6 +18818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -19021,6 +19116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
@@ -19484,6 +19584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_PointLightDistance
       value: 3
       objectReference: {fileID: 0}
@@ -19893,6 +19998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -20115,6 +20225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.605
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538520962867223644, guid: 327e90a20d7e29b4abd6ca5d68f7c4e7,
         type: 3}

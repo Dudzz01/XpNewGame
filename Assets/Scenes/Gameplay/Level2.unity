@@ -800,6 +800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6655742414330288855, guid: 911f06af6d871e947ae799aca01ebfcd,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655742414330288855, guid: 911f06af6d871e947ae799aca01ebfcd,
+        type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -1438,6 +1443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
+        type: 3}
       propertyPath: m_PointLightDistance
       value: 8
       objectReference: {fileID: 0}
@@ -1694,6 +1704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.485
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
@@ -2172,6 +2187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151570512063938004, guid: ab70e1314847f4b4693378334bf35601,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6151570512063938004, guid: ab70e1314847f4b4693378334bf35601,
         type: 3}
@@ -12230,6 +12250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876417623282869191, guid: 06a13443015dabe48893e64f9f1fb733,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876417623282869191, guid: 06a13443015dabe48893e64f9f1fb733,
+        type: 3}
       propertyPath: m_PointLightInnerRadius
       value: 5
       objectReference: {fileID: 0}
@@ -13034,6 +13059,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
       propertyPath: m_AlphaBlendOnOverlap
       value: 1
       objectReference: {fileID: 0}
@@ -13192,6 +13222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1356141903768838719, guid: 12cc99911f184f344a265200339f9514,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356141903768838719, guid: 12cc99911f184f344a265200339f9514,
+        type: 3}
       propertyPath: m_PointLightDistance
       value: 1.07
       objectReference: {fileID: 0}
@@ -13298,6 +13333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
         type: 3}
@@ -13462,6 +13502,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseNormalMap
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471346370355464069, guid: 81db27013d8339344a9999a9a1af2aaf,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3471346370355464069, guid: 81db27013d8339344a9999a9a1af2aaf,
         type: 3}
@@ -15122,6 +15167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3471346370355464069, guid: 81db27013d8339344a9999a9a1af2aaf,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471346370355464069, guid: 81db27013d8339344a9999a9a1af2aaf,
+        type: 3}
       propertyPath: m_LightVolumeOpacity
       value: 0.025
       objectReference: {fileID: 0}
@@ -15981,6 +16031,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
       propertyPath: m_PointLightDistance
       value: 17.25
       objectReference: {fileID: 0}
@@ -16409,6 +16464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 596213292903224774, guid: ef37837890ae49f4c9223f5b266396a7,
         type: 3}
@@ -16942,6 +17002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
         type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488035210389560030, guid: 689a04c94b2cbe442b0851280e7325d7,
+        type: 3}
       propertyPath: m_AlphaBlendOnOverlap
       value: 1
       objectReference: {fileID: 0}
@@ -17108,6 +17173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471346370355464069, guid: 81db27013d8339344a9999a9a1af2aaf,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3471346370355464069, guid: 81db27013d8339344a9999a9a1af2aaf,
         type: 3}

@@ -17,6 +17,7 @@ public class EnergyBar : MonoBehaviour
     [SerializeField] public static float maxEnergy;
     [SerializeField] Image remainingEnergyImage;
 
+
     void Start()
     {
         InitEnergy();
@@ -100,6 +101,11 @@ public class EnergyBar : MonoBehaviour
             isShadowed = false;
             //Debug.Log("THERE'S NO COLLIDER");
         }
+    }
+
+    public  float GetCurrentEnergy()
+    {
+        return remainingEnergy;
     }
 
     void OnDrawGizmos()
