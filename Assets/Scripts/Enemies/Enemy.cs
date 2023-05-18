@@ -14,6 +14,7 @@ public abstract class Enemy : MonoBehaviour
     [Header("Properties")]
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected float timeShoot;
+    
     [Space(10)]
     [SerializeField] protected Vector2 posInicial;
 

@@ -65,13 +65,14 @@ public class Shocker : Enemy
         {
             if(hit.rigidbody.name == "Player" && EnergyBar.isShadowed == false)
             {
+               
                 enemyAnimController.SetInteger("CondicaoDroneAnim", 2);
                 canAnimWalk = false;
                 canShot = 1;
                 StartCoroutine(timeReloadShoot()); 
                 return;
             }
-
+               
             //Debug.Log("Name colision vilon: " + hit.rigidbody.name);
         }
     }

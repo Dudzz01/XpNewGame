@@ -83,10 +83,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c68729425e1ad45b9d46cf2c7d83b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMoviment: 0
   bulletEnemy: {fileID: 8508638124374106644, guid: 9d57d74c542c91b4fb0f1e03c4b38e54,
     type: 3}
+  bulletPoolEnemy: {fileID: 0}
+  target: {fileID: 0}
+  enemyAnimController: {fileID: 0}
+  movementSpeed: 0
   timeShoot: 0
+  posInicial: {x: 0, y: 0}
 --- !u!212 &3583270981846532064
 SpriteRenderer:
   m_ObjectHideFlags: 0

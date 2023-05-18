@@ -41,6 +41,7 @@ public class ObjectPooling : MonoBehaviour
         GameObject bulletCurrent = queueOfBullets.Dequeue();
         queueOfBullets.Enqueue(bulletCurrent);
         bulletCurrent.SetActive(true);
+        bulletCurrent.GetComponent<ParticleBullets>().ShootParticleEnemy();
         return bulletCurrent;
     }
 

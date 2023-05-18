@@ -61,11 +61,14 @@ public class Boo : Enemy
 
         if(posBeetweenEnemyToPlayer < 8 )
         {
+           
             GameObject bulletEm = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
             bulletEm.transform.position = transform.position;
             bulletEm.transform.rotation = Quaternion.identity;
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;
+            return;
         }
+            
 
        // Debug.Log("Inimigo atirou! Distancia entre player e inimigo" + posBeetweenEnemyToPlayer);
     }

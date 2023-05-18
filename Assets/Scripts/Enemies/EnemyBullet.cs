@@ -7,9 +7,11 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] protected GameObject bulletPoolEnemy;
      public Vector2 dirBullet{get; set;}
+     
      [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip[] soundClipBullet = new AudioClip[1];
      private const float speedBullet = 8;
+     private int nume;
 
     
     void Start()
@@ -23,6 +25,8 @@ public class EnemyBullet : MonoBehaviour
     {
         rig.velocity = dirBullet*speedBullet;
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D col)
     {

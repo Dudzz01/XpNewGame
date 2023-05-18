@@ -6,13 +6,8 @@ public class Shooter : Enemy
 {
     private void Update()
     {
-        timeShoot += Time.deltaTime;
-
-        if(timeShoot > 1.5)
-        {
+            
             Shoot();
-            timeShoot = 0;
-        }
 
         transform.right = target.transform.position - transform.position;
         transform.position = posInicial;
@@ -22,15 +17,24 @@ public class Shooter : Enemy
     {
         float posBeetweenEnemyToPlayer = Vector2.Distance(target.transform.position, transform.position);
 
-        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false)
+        timeShoot += Time.deltaTime;
+
+        if(posBeetweenEnemyToPlayer < 8 && EnergyBar.isShadowed == false && timeShoot > 1.5)
         {
             // GameObject bulletEm = Instantiate(bulletEnemy, transform.position, Quaternion.identity);
+           
             GameObject bulletEm = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
             bulletEm.transform.position = transform.position;
             bulletEm.transform.rotation = Quaternion.identity;
             Vector2 dirBullet = target.transform.position - transform.position;
             bulletEm.GetComponent<EnemyBullet>().dirBullet = dirBullet.normalized;
+            timeShoot = 0;
+            
         }
+
+           
+           
+
        // Debug.Log("Inimigo atirou! Distancia entre player e inimigo" + posBeetweenEnemyToPlayer);
     }
 

@@ -87,7 +87,9 @@ public class Tank : Enemy
                 canShot = 1;
                 
                 StartCoroutine(timeReloadShoot()); 
+                
             }
+                
         }
     }
 
