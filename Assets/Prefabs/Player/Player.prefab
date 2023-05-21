@@ -238,6 +238,11 @@ MonoBehaviour:
   rayDistance: 1000
   remainingEnergy: 1
   remainingEnergyImage: {fileID: 0}
+  portrait: {fileID: 0}
+  portraits:
+  - {fileID: -2632242807115245164, guid: 818b2b70b50238d49ba4c03eedf18ef4, type: 3}
+  - {fileID: -5218192663885958664, guid: 818b2b70b50238d49ba4c03eedf18ef4, type: 3}
+  - {fileID: -8753229791276986834, guid: 818b2b70b50238d49ba4c03eedf18ef4, type: 3}
 --- !u!114 &-8667513317160042574
 MonoBehaviour:
   m_ObjectHideFlags: 0

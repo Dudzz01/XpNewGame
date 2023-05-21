@@ -17,17 +17,20 @@ public class EnergyBar : MonoBehaviour
     [SerializeField] public static float maxEnergy;
     [SerializeField] Image remainingEnergyImage;
 
+    [Header("Portraits")]
+    [SerializeField] Image portrait;
+    [SerializeField] Sprite[] portraits;
 
     void Start()
     {
         InitEnergy();
-        maxEnergy = remainingEnergy;
     }
 
     void Update()
     {
         StartCoroutine(DecreaseEnergy());
         EnergyDisplay();
+        DisplayEnergyPortrait();
     }
 
     void FixedUpdate()
@@ -37,6 +40,7 @@ public class EnergyBar : MonoBehaviour
 
     void InitEnergy()
     {
+        maxEnergy = remainingEnergy;
         remainingEnergy = 1f;
     }
 
@@ -68,7 +72,7 @@ public class EnergyBar : MonoBehaviour
         else if(remainingEnergy < 0f)
         {
             remainingEnergy = 0f;
-            Debug.Log("Without energy :(");
+            //Debug.Log("Without energy :(");
         }
     }
 
@@ -103,9 +107,25 @@ public class EnergyBar : MonoBehaviour
         }
     }
 
-    public  float GetCurrentEnergy()
+    public float GetCurrentEnergy()
     {
         return remainingEnergy;
+    }
+
+    void DisplayEnergyPortrait()
+    {
+        if(remainingEnergyImage.fillAmount > 0.5f)
+        {
+            portrait.sprite = portraits[0]; //Default
+        }
+        else if(remainingEnergyImage.fillAmount < 0.5f && remainingEnergyImage.fillAmount > 0.1f)
+        {
+            portrait.sprite = portraits[1]; //Tired
+        }
+        else if(remainingEnergyImage.fillAmount == 0)
+        {
+            portrait.sprite = portraits[2]; //Dead
+        }
     }
 
     void OnDrawGizmos()

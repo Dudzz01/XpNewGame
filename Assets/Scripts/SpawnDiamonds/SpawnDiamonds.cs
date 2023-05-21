@@ -75,7 +75,7 @@ public class SpawnDiamonds : MonoBehaviour
 
    void FillDiamondText()
    {
-      counterText = GameObject.Find("UI/DiamondCounter/DiamondAmount").transform.gameObject.GetComponent<TextMeshProUGUI>();
+      counterText = GameObject.Find("UI/HUD/DiamondCounter/DiamondAmount").transform.gameObject.GetComponent<TextMeshProUGUI>();
    }
 
    void FillDoorReference()
