@@ -325,6 +325,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if(other.gameObject.layer == 12)
+        {
+            playerIsAlive = false;
+        }
+    }
+
     private void OnDrawGizmos() 
     {
         Gizmos.DrawWireSphere((Vector2)transformArm.position+rightOffSetArm,0.19f);

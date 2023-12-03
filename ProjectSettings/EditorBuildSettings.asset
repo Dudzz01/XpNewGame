@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu/VulcanoIntro.unity
+    path: Assets/Scenes/Gameplay/Menu/VulcanoIntro.unity
     guid: d1897200a83f14b4b9d9829290ed4a94
   - enabled: 1
-    path: Assets/Scenes/Menu/Menu.unity
+    path: Assets/Scenes/Gameplay/Menu/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Gameplay/Level1.unity
@@ -21,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay/Level3.unity
     guid: 342f3b0c67a684644a3b706b613f21a3
   - enabled: 1
-    path: Assets/Scenes/Menu/Congratulations.unity
+    path: Assets/Scenes/Gameplay/Menu/Congratulations.unity
     guid: 0635091fd55f4df4db831e8199e1aed0
   - enabled: 1
-    path: Assets/Scenes/Menu/Credits.unity
+    path: Assets/Scenes/Gameplay/Menu/Credits.unity
     guid: bdef55b0be6ab274193726501bc6fe76
   - enabled: 1
-    path: Assets/Scenes/Menu/Tutorial.unity
+    path: Assets/Scenes/Gameplay/Menu/Tutorial.unity
     guid: 0e7943bd39fe29d4e8ef45fa32601331
   m_configObjects: {}

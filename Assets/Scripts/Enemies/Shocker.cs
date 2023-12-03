@@ -81,10 +81,10 @@ public class Shocker : Enemy
     {
         yield return new WaitForSeconds(0.2f);
 
-        GameObject enemyP = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
-        enemyP.transform.position = transform.position;
-        enemyP.transform.rotation = Quaternion.identity;
-        enemyP.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
+        GameObject enemyBullet = bulletPoolEnemy.GetComponent<ObjectPooling>().GetBulletInPool();
+        enemyBullet.transform.position = transform.position;
+        enemyBullet.transform.rotation = Quaternion.identity;
+        enemyBullet.GetComponent<EnemyBullet>().dirBullet = -Vector2.up;
         canAnimWalk = true;
 
         yield return new WaitForSeconds(0.2f);
@@ -115,8 +115,5 @@ public class Shocker : Enemy
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(transform.position, -Vector2.up);
-    }
+   
 }
